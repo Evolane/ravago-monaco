@@ -1,0 +1,16 @@
+{
+    "enabled": true,
+    "name": "Service Success Rate {{.servicename}}",
+    "customDescription": null,
+    "metricName": "service_success_rate_{{.metricname}}",
+    "metricExpression": "((builtin:service.response.time:avg:partition(\"latency\",value(\"good\",lt(10000))):splitBy():count:default(0))/(builtin:service.response.time:avg:splitBy():count)*(100)):default(100,always)",
+    "evaluationType": "AGGREGATE",
+    "filter": "type(\"SERVICE\"),entityName.startsWith(\"{{.servicename}}\")",
+    "evaluationWindow": "-1w",
+    "targetSuccess": 99.98,
+    "targetWarning": 99.99,
+    "errorBudgetBurnRate": {
+        "burnRateVisualizationEnabled": true,
+        "fastBurnThreshold": 10
+    }
+}

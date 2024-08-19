@@ -1,0 +1,129 @@
+configs:
+- id: ohm
+  config:
+    name: ohm
+    template: application-web.json
+    skip: false
+  type:
+    api: application-web
+- id: ohm
+  config:
+    name: ohm
+    template: web-name.json
+    skip: false
+    parameters:
+      webname: ohm
+  type:
+    settings:
+      schema: builtin:rum.web.name
+      scope:
+        configId: ohm
+        configType: application-web
+        property: id
+        type: reference
+- id: ohm
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      urlpattern: ohm.ravago.com
+      appid:
+        configId: ohm
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+- id: ohm-2
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      urlpattern: aliasohmappprd
+      appid:
+        configId: ohm
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+#################################################
+- id: blue
+  config:
+    name: blue
+    template: application-web.json
+    skip: false
+  type:
+    api: application-web
+- id: blue
+  config:
+    name: blue
+    template: web-name.json
+    skip: false
+    parameters:
+      webname: blue
+  type:
+    settings:
+      schema: builtin:rum.web.name
+      scope:
+        configId: blue
+        configType: application-web
+        property: id
+        type: reference
+- id: blue
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      urlpattern: /sales-order-front
+      appid:
+        configId: blue
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+- id: inventory
+  config:
+    name: inventory
+    template: application-web.json
+    skip: false
+  type:
+    api: application-web
+#################################################    
+- id: inventory
+  config:
+    name: inventory
+    template: web-name.json
+    skip: false
+    parameters:
+      webname: inventory
+  type:
+    settings:
+      schema: builtin:rum.web.name
+      scope:
+        configId: inventory
+        configType: application-web
+        property: id
+        type: reference
+- id: inventory
+  config:
+    parameters:
+      urlpattern: inventory.ravapps
+      matcher: URL_CONTAINS
+      appid:
+        configId: inventory
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment

@@ -1,0 +1,48 @@
+configs:
+- id: slo-groots-up
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-groots-up
+    parameters:
+      appname: "GROOTS UP PRD"
+      metricname: groots_up_prd
+    template: "slo-apdex.json"
+
+- id: slo-blue
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-blue
+    parameters:
+      appname: "BLUE PRD"
+      metricname: blue_prd
+    template: "slo-apdex.json"
+
+- id: slo-atomikos-connections-inventory
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-atomikos-connections
+    parameters:
+      servicename: "atomikos Connections inventory-app.jar"
+      metricname: atomikos_connections_inventory
+    template: "slo-service-success-rate.json"
+
+- id: slo-atomikos-connections-master
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-atomikos-connections
+    parameters:
+      servicename: "atomikos Connections master-data-app.jar"
+      metricname: atomikos_connections_master
+    template: "slo-service-success-rate.json"

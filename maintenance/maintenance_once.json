@@ -1,0 +1,17 @@
+{
+  "enabled": false,
+  "generalProperties": {
+    "name": "{{ .maintenance_name }}",
+    "maintenanceType": "PLANNED",
+    "suppression": "DONT_DETECT_PROBLEMS",
+    "disableSyntheticMonitorExecution": true
+  },
+  "schedule": {
+    "scheduleType": "ONCE",
+    "onceRecurrence": {
+      "startTime": "{{ .start_time }}",
+      "endTime": "{{ .end_time }}",
+      "timeZone": "Europe/Brussels"
+    }
+  }
+}

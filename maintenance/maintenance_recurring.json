@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "generalProperties": {
+    "name": "{{ .maintenance_name }}",
+    "maintenanceType": "PLANNED",
+    "suppression": "DONT_DETECT_PROBLEMS",
+    "disableSyntheticMonitorExecution": true
+  },
+  "schedule": {
+    "scheduleType": "WEEKLY",
+    "weeklyRecurrence": {
+      "dayOfWeek": "{{ .day_of_week }}",
+      "timeWindow": {
+        "startTime": "{{ .start_time }}",
+        "endTime": "{{ .end_time }}",
+        "timeZone": "Europe/Brussels"
+      },
+      "recurrenceRange": {
+        "scheduleStartDate": "{{ .schedule_start }}",
+        "scheduleEndDate": "{{ .schedule_end }}"
+      }
+    }
+  },
+  "filters": []
+}

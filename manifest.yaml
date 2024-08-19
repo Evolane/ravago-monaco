@@ -1,0 +1,30 @@
+manifestVersion: 1.0
+
+projects:
+  - name: bi-reporting
+
+
+environmentGroups:
+#- name: nonprd
+#  environments:
+#  - name: dev
+#    url:
+#      value: https://maq38184.live.dynatrace.com/
+#    auth:
+#      token:
+#        name: DYNATRACE_DEV_TOKEN
+#  - name: uat 
+#    url:
+#      value: https://rgt99956.live.dynatrace.com
+#    auth:
+#      token:
+#        name: DYNATRACE_UAT_TOKEN
+- name: prd 
+  environments:
+  - name: prd
+    url:
+      value: https://kpi72937.live.dynatrace.com
+    auth:
+      token:
+        name: DYNATRACE_PROD_TOKEN
+

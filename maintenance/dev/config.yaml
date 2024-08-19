@@ -1,0 +1,40 @@
+configs:
+- id: maint-1
+  config:
+    name: "maintenance 1"
+    template: ../maintenance_once.json
+    parameters:
+      maintenance_name: "test maintenance 1"
+      start_time: "2024-05-25T05:00:00"
+      end_time: "2024-05-25T23:00:00"
+  type:
+    settings:
+      schema: builtin:alerting.maintenance-window
+      scope: environment
+- id: maint-2
+  config:
+    name: "maintenance 2"
+    template: ../maintenance_once.json
+    parameters:
+      maintenance_name: "test maintenance 2"
+      start_time: "2024-07-25T05:00:00"
+      end_time: "2024-07-25T23:00:00"
+  type:
+    settings:
+      schema: builtin:alerting.maintenance-window
+      scope: environment
+- id: maint-3
+  config:
+    name: "maintenance 3"
+    template: ../maintenance_recurring.json
+    parameters:
+      maintenance_name: "test maintenance 3 - recurring"
+      start_time: "05:00:00"
+      end_time: "07:00:00"
+      day_of_week: "SUNDAY"
+      schedule_start: "2024-01-01"
+      schedule_end: "2026-01-01"
+  type:
+    settings:
+      schema: builtin:alerting.maintenance-window
+      scope: environment
