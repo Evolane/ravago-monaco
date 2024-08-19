@@ -1,0 +1,12 @@
+configs:
+  - id: Application-CRM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application-CRM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: "Application-CRM"
+        tagkeyvalue: "Application:CRM"

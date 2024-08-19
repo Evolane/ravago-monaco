@@ -1,0 +1,17 @@
+configs:
+- id: teams-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: teamstag
+    template: teamtag.json
+- id: application-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: applicationtag
+    template: applicationtag.json

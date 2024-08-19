@@ -1,0 +1,86 @@
+{
+    "name": "{{.mgzonename}}",
+    "description": "Made Through Monaco",
+    "rules": [
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(HTTP_CHECK),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(SYNTHETIC_TEST),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(APPLICATION),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(HOST),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(PROCESS_GROUP),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CUSTOM_APPLICATION),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(MOBILE_APPLICATION),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CUSTOM_DEVICE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION_NAMESPACE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_CLUSTER),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CONTAINER_GROUP_INSTANCE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CONTAINER_GROUP),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION_NAMESPACE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE),tag({{.tagkeyvalue}})"
+        }
+    ]
+}

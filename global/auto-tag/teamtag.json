@@ -1,0 +1,602 @@
+{
+    "name": "Team",
+    "description": "Made by Monaco",
+    "rules": [
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "MaterialAvailability",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "inventory",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "MRP ICP UAT",
+                        "caseSensitive": false
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "HOST",
+                "conditions": [
+                    {
+                        "key": "HOST_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "ravcu",
+                        "caseSensitive": true
+                    }
+                ],
+                "hostToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "MRP",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "7of9",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "inventory",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Brewery)),not(entityName.startsWith(ohm))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Brewery))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Brewery))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "job-scheduler",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "fop",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": null,
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "order-handling",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "purchase",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "batch-web-app",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "sales",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "contract-management",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "commission",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "blue",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "pc-workspace",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "workflow-automation",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "Fin_",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Manufacturing)),not(entityName.startsWith(BLUE))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Manufacturing))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Manufacturing))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "shop-floor",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "master-data",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "calendar",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "recipe",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "jom",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Customer portal",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "CUSTOMER PORTAL",
+                        "caseSensitive": true
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Customer portal",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "customer-portal",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Customer portal",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "customer.portal",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Customer portal",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "customerportal",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "JOM",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "jom",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "JOM",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "jom",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "JOM",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(JOM))"
+        }
+    ]
+}
