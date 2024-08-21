@@ -119,21 +119,21 @@
             "valueFormat": "Brewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Brewery)),not(entityName.startsWith(ohm))"
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Brewery)),not(entityName.startsWith(ohm))"
         },
         {
             "enabled": true,
             "valueFormat": "Brewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Brewery))"
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Brewery))"
         },
         {
             "enabled": true,
             "valueFormat": "Brewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Brewery))"
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Brewery))"
         },
         {
             "enabled": true,
@@ -175,7 +175,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": null,
+            "valueFormat": "Brewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -349,21 +349,21 @@
             "valueFormat": "Manufactoring",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Manufacturing)),not(entityName.startsWith(BLUE))"
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Manufacturing)),not(entityName.startsWith(BLUE))"
         },
         {
             "enabled": true,
             "valueFormat": "Manufactoring",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Manufacturing))"
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Manufacturing))"
         },
         {
             "enabled": true,
             "valueFormat": "Manufactoring",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Manufacturing))"
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Manufacturing))"
         },
         {
             "enabled": true,
@@ -577,14 +577,14 @@
             "valueFormat": "JOM",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(JOM))"
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:JOM))"
         },
         {
             "enabled": true,
             "valueFormat": "Brewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Brewery))"
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:Brewery))"
         },
         {
             "enabled": true,
@@ -925,8 +925,8 @@
                 "conditions": [
                     {
                         "key": "HOST_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "IIB"
+                        "operator": "EQUALS",
+                        "tag": "Team:Integrations"
                     }
                 ],
                 "hostToPGPropagation": false
@@ -942,8 +942,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "IIB"
+                        "operator": "EQUALS",
+                        "tag": "Team:Integrations"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1042,8 +1042,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "Calendar"
+                        "operator": "EQUALS",
+                        "tag": "Application:Calendar"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1060,8 +1060,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "Master-Data"
+                        "operator": "EQUALS",
+                        "tag": "Application:Master-Data"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1078,8 +1078,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "Recipe-Management"
+                        "operator": "EQUALS",
+                        "tag": "Application:Recipe-Management"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1096,8 +1096,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "Shopfloor"
+                        "operator": "EQUALS",
+                        "tag": "Application:Shopfloor"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1114,8 +1114,8 @@
                 "conditions": [
                     {
                         "key": "SERVICE_TAGS",
-                        "operator": "TAG_KEY_EQUALS",
-                        "tag": "JOM"
+                        "operator": "EQUALS",
+                        "tag": "Team:JOM"
                     }
                 ],
                 "serviceToHostPropagation": false,

@@ -307,14 +307,14 @@
             "valueFormat": "Inventory",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Inventory))"
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Application:Inventory))"
         },
         {
             "enabled": true,
             "valueFormat": "Inventory",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Inventory))"
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Application:Inventory))"
         },
         {
             "enabled": true,
