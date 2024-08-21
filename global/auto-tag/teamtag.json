@@ -1,6 +1,6 @@
 {
     "name": "Team",
-    "description": "Made by Monaco",
+    "description": "DO NOT CHANGE - Managed by Monaco",
     "rules": [
         {
             "enabled": true,
@@ -346,25 +346,6 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "BEGINS_WITH",
-                        "stringValue": "Fin_",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
             "valueFormat": "Manufactoring",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
@@ -597,6 +578,549 @@
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
             "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(JOM))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Brewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Brewery))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Credit Control",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_DATABASE_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravhot",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Credit Control",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "credit",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "invoice-control",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "Company-master",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "Document",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "masterdata",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "master-data",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "Certificate",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "trax",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_DETECTED_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "fin",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "ravapps-exchangerate-integrations",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "FINANCE",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "CREDIT",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "Cost",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Finance",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "tax",
+                        "caseSensitive": false
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "integrations",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_ID",
+                        "operator": "EQUALS",
+                        "entityId": "PROCESS_GROUP-81FFD9144C6DA5BF"
+                    },
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "IBM_INTEGRATION_NODE_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "IBM",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "HOST",
+                "conditions": [
+                    {
+                        "key": "HOST_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "IIB"
+                    }
+                ],
+                "hostToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "IIB"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),queueVendorName(JMS_IIB)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Integrations",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(QUEUE),entityname.startsWith(IBMDATACENTER.IIB)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "RECIPE-MANAGEMENT-FRONT PRD",
+                        "caseSensitive": true
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "MASTER DATA FRONT PRD",
+                        "caseSensitive": true
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "SHOPFLOOR PRD",
+                        "caseSensitive": true
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufactoring",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "APPLICATION",
+                "conditions": [
+                    {
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "JOM PRD",
+                        "caseSensitive": true
+                    }
+                ]
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "MFG",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "Calendar"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "MFG",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "Master-Data"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "MFG",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "Recipe-Management"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "MFG",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "Shopfloor"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "MFG",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_TAGS",
+                        "operator": "TAG_KEY_EQUALS",
+                        "tag": "JOM"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
         }
     ]
 }

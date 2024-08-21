@@ -1,0 +1,106 @@
+{
+    "name": "SOR",
+    "description": "DO NOT CHANGE - Managed by Monaco",
+    "rules": [
+        {
+            "enabled": true,
+            "valueFormat": "{ProcessGroup:KubernetesBasePodName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravapps-sales-front-*",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "{ProcessGroup:KubernetesBasePodName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravapps-blue-web-app-*",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "{ProcessGroup:KubernetesBasePodName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravapps-blue-orders-system-app-*",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "{ProcessGroup:KubernetesBasePodName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravapps-workflow-automation-app-*",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "{ProcessGroup:KubernetesBasePodName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_PREDEFINED_METADATA",
+                        "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravapps-sales-orders-search-web-app-*",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        }
+    ]
+}

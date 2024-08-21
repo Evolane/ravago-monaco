@@ -1,6 +1,6 @@
 {
     "name": "{{.mgzonename}}",
-    "description": "Made Through Monaco",
+    "description": "DO NOT CHANGE - Managed by Monaco",
     "rules": [
         {
             "enabled": true,
@@ -31,6 +31,11 @@
             "enabled": true,
             "type": "SELECTOR",
             "entitySelector": "type(PROCESS_GROUP),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(PROCESS_GROUP_INSTANCE),tag({{.tagkeyvalue}})"
         },
         {
             "enabled": true,
@@ -81,6 +86,22 @@
             "enabled": true,
             "type": "SELECTOR",
             "entitySelector": "type(KUBERNETES_SERVICE),tag({{.tagkeyvalue}})"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION_INSTANCE),fromRelationships.isInstanceOf(type(CLOUD_APPLICATION),tag({{.tagkeyvalue}}))"
+        },
+        
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(PROCESS_GROUP_INSTANCE),fromRelationships.isInstanceOf(type(PROCESS_GROUP),tag({{.tagkeyvalue}}))"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(PROCESS_GROUP_INSTANCE),fromRelationships.isProcessOf(type(HOST),tag({{.tagkeyvalue}}))"
         }
     ]
 }

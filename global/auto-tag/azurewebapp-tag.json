@@ -1,0 +1,23 @@
+{
+    "name": "Azure web app",
+    "description": "DO NOT CHANGE - Managed by Monaco",
+    "rules": [
+        {
+            "enabled": true,
+            "valueFormat": "{Host:AzureSiteName}",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "HOST",
+                "conditions": [
+                    {
+                        "key": "HOST_PAAS_TYPE",
+                        "operator": "EQUALS",
+                        "enumValue": "AZURE_WEBSITES"
+                    }
+                ],
+                "hostToPGPropagation": false
+            }
+        }
+    ]
+}

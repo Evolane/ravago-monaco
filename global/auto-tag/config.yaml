@@ -1,12 +1,4 @@
 configs:
-- id: teams-tag
-  type:
-    settings:
-      schema: builtin:tags.auto-tagging
-      scope: environment
-  config:
-    name: teamstag
-    template: teamtag.json
 - id: application-tag
   type:
     settings:
@@ -15,3 +7,60 @@ configs:
   config:
     name: applicationtag
     template: applicationtag.json
+- id: azurewebapp-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: azurewebapp
+    template: azurewebapp-tag.json
+- id: java-jar-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: java-jar-tag
+    template: java-jar-tag.json
+- id: kub-container-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: kub-container-tag
+    template: kub-container-tag.json
+- id: kub-namespace-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: kub-namespace-tag
+    template: kub-namespace-tag.json
+- id: kub-pod-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: kub-pod-tag
+    template: kub-pod-tag.json
+- id: sor-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: sor-tag
+    template: sor-tag.json
+
+- id: teams-tag
+  type:
+    settings:
+      schema: builtin:tags.auto-tagging
+      scope: environment
+  config:
+    name: teamstag
+    template: teamtag.json
