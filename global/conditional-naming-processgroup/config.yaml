@@ -1,0 +1,51 @@
+configs:
+- id: ACE-trax-int
+  type:
+    api: conditional-naming-processgroup
+  config:
+    name: ACE-trax-int
+    parameters:
+      nameFormat: ACE trax-integrations
+      displayName: ACE trax-integrations
+      detectedPGName: ravapps-trax-integrations
+    template: "ace-template.json"
+- id: ACE-sap-integrations
+  type:
+    api: conditional-naming-processgroup
+  config:
+    name: ACE sap-integrations
+    parameters:
+      nameFormat: ACE sap-integrations ({ProcessGroup:KubernetesFullPodName})
+      displayName: ACE sap-integrations 
+      detectedPGName: ravapps-sap-integrations
+    template: "ace-template.json"
+- id: ACE-edicom-integrations
+  type:
+    api: conditional-naming-processgroup
+  config:
+    name: ACE edicom-integrations
+    parameters:
+      nameFormat: ACE edicom-integrations ({ProcessGroup:KubernetesFullPodName})
+      displayName: ACE edicom-integrations
+      detectedPGName: ravapps-edicom-integrations
+    template: "ace-template.json"
+- id: ACE-odm-integrations
+  type:
+    api: conditional-naming-processgroup
+  config:
+    name: ACE odm-integrations
+    parameters:
+      nameFormat: ACE odm-integrations ({ProcessGroup:KubernetesFullPodName})
+      displayName: ACE odm-integrations 
+      detectedPGName: ravapps-odm-integrations
+    template: "ace-template.json"
+- id: azure-web-app-process
+  type:
+    api: conditional-naming-processgroup
+  config:
+    name: azure-web-app-process
+    parameters:
+      displayName: Azure web app processes
+    template: "azure-web-process.json"
+
+    

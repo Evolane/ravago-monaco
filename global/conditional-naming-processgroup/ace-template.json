@@ -1,0 +1,35 @@
+{
+    "type": "PROCESS_GROUP",
+    "nameFormat": "{{.nameFormat}}",
+    "displayName": "{{.displayName}}",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_TECHNOLOGY",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "SIMPLE_TECH",
+          "operator": "EQUALS",
+          "value": {
+            "type": "IBM_INTEGRATION_BUS"
+          },
+          "negate": false
+        }
+      },
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_DETECTED_NAME",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "CONTAINS",
+          "value": "{{.detectedPGName}}",
+          "negate": false,
+          "caseSensitive": false
+        }
+      }
+    ]
+  }

@@ -1,0 +1,179 @@
+configs:
+- id: slo-blue-apdex
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-blue-apdex
+    parameters:
+      sloname: "Blue Apdex"
+      metricname: "slo_blue_apdex"
+      metricExpression: '(100)*(builtin:apps.web.actionCount.category:filter(eq("Apdex category",SATISFIED)):splitBy())/(builtin:apps.web.actionCount.category:splitBy())'
+      filter: 'type("APPLICATION"),entityName.startswith("BLUE")'
+      evaluationWindow: "-1w"
+      targetSuccess: 90
+      targetWarning: 91
+    template: "slo-template.json"
+- id: slo-groots-resinex-apdex
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-groots-resinex-apdex
+    parameters:
+      sloname: "GROOTS RESINEX APDEX"
+      metricname: "groots_resinex_apdex"
+      metricExpression: '(100)*(builtin:apps.web.actionCount.category:filter(eq("Apdex category",SATISFIED)):splitBy())/(builtin:apps.web.actionCount.category:splitBy())'
+      filter: 'type("APPLICATION"),entityName.startswith("GROOTS RESINEX")'
+      evaluationWindow: "-1w"
+      targetSuccess: 90
+      targetWarning: 91
+    template: "slo-template.json"
+- id: slo-groots-up-apdex
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-groots-up-apdex
+    parameters:
+      sloname: "GROOTS UP APDEX"
+      metricname: "groots_up_prd_apdex"
+      metricExpression: '(100)*(builtin:apps.web.actionCount.category:filter(eq("Apdex category",SATISFIED)):splitBy())/(builtin:apps.web.actionCount.category:splitBy())'
+      filter: 'type("APPLICATION"),entityName.startswith("GROOTS UP")'
+      evaluationWindow: "-1w"
+      targetSuccess: 90
+      targetWarning: 91
+    template: "slo-template.json"
+
+- id: slo-global-apdex
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-apdex
+    parameters:
+      sloname: "Global Apdex Performance"
+      metricname: "slo_groots_up_apdex"
+      metricExpression: '(100)*(builtin:apps.web.actionCount.category:filter(eq(Apdex category,SATISFIED)):splitBy())/(builtin:apps.web.actionCount.category:splitBy())'
+      filter: ""
+      evaluationWindow: "-1w"
+      targetSuccess: 95
+      targetWarning: 98
+    template: "slo-template.json"
+
+- id: slo-global-database
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-database
+    parameters:
+      sloname: "Global Database Performance"
+      metricname: "global_database_performance"
+      metricExpression: '((builtin:service.response.time:avg:toUnit(MicroSecond,MilliSecond):filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"DATABASE_SERVICE~")"))))):partition("perf",value("good",lt(100))):splitBy():count:default(0))/(builtin:service.response.time:avg:filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"DATABASE_SERVICE~")"))))):splitBy():count)*(100))'
+      filter: ""
+      evaluationWindow: "-1w"
+      targetSuccess: 95
+      targetWarning: 98
+    template: "slo-template.json"
+- id: slo-global-success-rate
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-success-rate
+    parameters:
+      sloname: "Global Database Success Rate"
+      metricname: "global_database_success_rate"
+      metricExpression: '100-builtin:service.errors.total.rate:filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"DATABASE_SERVICE~")"))))):splitBy()'
+      filter: ""
+      evaluationWindow: "-1w"
+      targetSuccess: 95
+      targetWarning: 98
+    template: "slo-template.json"
+- id: slo-global-service-availability
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-service-availability
+    parameters:
+      sloname: "Global Service Availability"
+      metricname: "global_service_availability"
+      metricExpression: '(100)*(builtin:service.errors.server.successCount:filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_SERVICE~")")),in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_REQUEST_SERVICE~")"))))):splitBy())/(builtin:service.requestCount.server:filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_SERVICE~")")),in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_REQUEST_SERVICE~")"))))):splitBy())'
+      filter: ""
+      evaluationWindow: "-1w"
+      targetSuccess: 95
+      targetWarning: 98
+    template: "slo-template.json"
+- id: slo-global-service-performance
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-service-performance
+    parameters:
+      sloname: "Global Service Performance"
+      metricname: "global_service_performance"
+      metricExpression: '((builtin:service.response.time:avg:toUnit(MicroSecond,MilliSecond):filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_SERVICE~")")),in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_REQUEST_SERVICE~")"))))):partition("perf",value("good",lt(1000))):splitBy():count:default(0))/(builtin:service.response.time:avg:filter(and(or(in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_SERVICE~")")),in("dt.entity.service",entitySelector("type(service),serviceType(~"WEB_REQUEST_SERVICE~")"))))):splitBy():count)*(100))'
+      filter: ""
+      evaluationWindow: "-1w"
+      targetSuccess: 95
+      targetWarning: 98
+    template: "slo-template.json"
+- id: slo-global-synthetic-availability
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-global-synthetic-availability
+    parameters:
+      sloname: "Global synthetic availibility (HTTP)"
+      metricname: "global_synthetic_availibility__http_"
+      metricExpression: '(builtin:synthetic.http.availability.location.total:splitBy())'
+      filter: 'type("HTTP_CHECK")'
+      evaluationWindow: "-1w"
+      targetSuccess: 99.98
+      targetWarning: 99.99
+    template: "slo-template.json"
+- id: slo-service-success-rate-invertory-app
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-service-success-rate-invertory-app
+    parameters:
+      sloname: "Service Success Rate atomikos Connections inventory-app.jar"
+      metricname: "service_success_rate_atomikos_connections_inventory"
+      metricExpression: '((builtin:service.response.time:avg:partition("latency",value("good",lt(10000))):splitBy():count:default(0))/(builtin:service.response.time:avg:splitBy():count)*(100)):default(100,always)'
+      filter: 'type("SERVICE"),entityName.startsWith("atomikos Connections inventory-app.jar")'
+      evaluationWindow: "-1w"
+      targetSuccess: 99.98
+      targetWarning: 99.99
+    template: "slo-template.json"
+- id: slo-service-success-rate-master-app
+  type:
+    settings:
+      schema: builtin:monitoring.slo
+      scope: environment
+  config:
+    name: slo-service-success-rate-master-app
+    parameters:
+      sloname: "Service Success Rate atomikos Connections master-data-app.jar"
+      metricname: "service_success_rate_atomikos_connections_master"
+      metricExpression: '((builtin:service.response.time:avg:partition("latency",value("good",lt(10000))):splitBy():count:default(0))/(builtin:service.response.time:avg:splitBy():count)*(100)):default(100,always)'
+      filter: 'type("SERVICE"),entityName.startsWith("atomikos Connections master-data-app.jar")'
+      evaluationWindow: "-1w"
+      targetSuccess: 99.98
+      targetWarning: 99.99
+    template: "slo-template.json"

@@ -1,0 +1,9 @@
+configs:
+- id: Azure-websites-host-names
+  type:
+    api: conditional-naming-host
+  config:
+    name: Azure-websites-host-names
+    parameters:
+      displayname: "Azure websites"
+    template: "azure-websites.json"

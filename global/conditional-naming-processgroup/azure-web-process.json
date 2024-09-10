@@ -1,0 +1,21 @@
+{
+    "type": "PROCESS_GROUP",
+    "nameFormat": "{ProcessGroup:DetectedName} {Host:AzureSiteName}",
+    "displayName": "{{.displayName}}",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_AZURE_SITE_NAME",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "EXISTS",
+          "value": null,
+          "negate": false,
+          "caseSensitive": null
+        }
+      }
+    ]
+  }

@@ -1,0 +1,20 @@
+{
+    "type": "HOST",
+    "nameFormat": "{Host:AzureHostName/^([^.]++)}",
+    "displayName": "{{.displayname}}",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "HOST_PAAS_TYPE",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "PAAS_TYPE",
+          "operator": "EQUALS",
+          "value": "AZURE_WEBSITES",
+          "negate": false
+        }
+      }
+    ]
+  }
