@@ -1,0 +1,49 @@
+{
+    "type": "SERVICE",
+    "nameFormat": "Netty {ProcessGroup:KubernetesBasePodName}",
+    "displayName": "Netty Clean naming",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "SERVICE_TECHNOLOGY",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "SIMPLE_TECH",
+          "operator": "EQUALS",
+          "value": {
+            "type": "JAVA"
+          },
+          "negate": false
+        }
+      },
+      {
+        "key": {
+          "attribute": "SERVICE_DETECTED_NAME",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "BEGINS_WITH",
+          "value": "Netty on 0:0:0:0:0:0:0:0%0:8080",
+          "negate": false,
+          "caseSensitive": true
+        }
+      },
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+          "dynamicKey": "KUBERNETES_BASE_POD_NAME",
+          "type": "PROCESS_PREDEFINED_METADATA_KEY"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "EXISTS",
+          "value": null,
+          "negate": false,
+          "caseSensitive": null
+        }
+      }
+    ]
+  }

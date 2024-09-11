@@ -1,0 +1,35 @@
+{
+  "type": "SERVICE",
+  "nameFormat": "{{.nameFormat}}",
+  "displayName": "{{.displayName}}",
+  "enabled": true,
+  "rules": [
+    {
+      "key": {
+        "attribute": "SERVICE_TECHNOLOGY",
+        "type": "STATIC"
+      },
+      "comparisonInfo": {
+        "type": "SIMPLE_TECH",
+        "operator": "EQUALS",
+        "value": {
+          "type": "JAVA"
+        },
+        "negate": false
+      }
+    },
+    {
+      "key": {
+        "attribute": "SERVICE_DETECTED_NAME",
+        "type": "STATIC"
+      },
+      "comparisonInfo": {
+        "type": "STRING",
+        "operator": "{{.operator}}",
+        "value": "{{.detectedServiceName}}",
+        "negate": false,
+        "caseSensitive": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "SERVICE",
+    "nameFormat": "MQConnectionFactory {ProcessGroup:JavaJarFile}",
+    "displayName": "MQConnectionFactory",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "SERVICE_DETECTED_NAME",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "BEGINS_WITH",
+          "value": "MQConnectionFactory",
+          "negate": false,
+          "caseSensitive": false
+        }
+      },
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+          "dynamicKey": "JAVA_JAR_FILE",
+          "type": "PROCESS_PREDEFINED_METADATA_KEY"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "EXISTS",
+          "value": null,
+          "negate": false,
+          "caseSensitive": null
+        }
+      }
+    ]
+  }

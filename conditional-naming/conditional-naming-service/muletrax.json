@@ -1,0 +1,36 @@
+{
+    "type": "SERVICE",
+    "nameFormat": "{Host:DetectedName} Trax {Service:DetectedName} Mule",
+    "displayName": "Mule trax",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+          "dynamicKey": "JAVA_MAIN_CLASS",
+          "type": "PROCESS_PREDEFINED_METADATA_KEY"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "EQUALS",
+          "value": "org.mule.module.reboot.MuleContainerBootstrap",
+          "negate": false,
+          "caseSensitive": true
+        }
+      },
+      {
+        "key": {
+          "attribute": "PROCESS_GROUP_PREDEFINED_METADATA",
+          "dynamicKey": "COMMAND_LINE_ARGS",
+          "type": "PROCESS_PREDEFINED_METADATA_KEY"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "CONTAINS",
+          "value": "trax",
+          "negate": false,
+          "caseSensitive": true
+        }
+      }
+    ]
+  }

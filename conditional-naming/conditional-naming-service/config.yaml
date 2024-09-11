@@ -1,0 +1,85 @@
+configs:
+- id: MessagingMessageListenerAdapter2
+  type:
+    api: conditional-naming-service
+  config:
+    name: MessagingMessageListenerAdapter2
+    parameters:
+      displayName: MessagingMessageListenerAdapter2
+      nameFormat: "{Service:DetectedName} {ProcessGroup:KubernetesBasePodName}"
+      detectedServiceName: MessagingMessageListenerAdapter
+      operator: EQUALS
+    template: "java-service-name.json"
+- id: localhost
+  type:
+    api: conditional-naming-service
+  config:
+    name: localhost
+    parameters:
+      displayName: localhost
+      nameFormat: "{Host:DetectedName} {ProcessGroup:JavaMainClass}"
+      detectedServiceName: localhost
+      operator: EQUALS
+    template: "java-service-name.json"
+- id: AbstractEventMessageListener
+  type:
+    api: conditional-naming-service
+  config:
+    name: AbstractEventMessageListener
+    parameters:
+      displayName: AbstractEventMessageListener
+      nameFormat: "{Service:DetectedName} {ProcessGroup:KubernetesBasePodName}"
+      detectedServiceName: AbstractEventMessageListener
+      operator: EQUALS
+    template: "java-service-name.json"
+- id: AbstractDataLoaderListener
+  type:
+    api: conditional-naming-service
+  config:
+    name: AbstractDataLoaderListener
+    parameters:
+      displayName: AbstractDataLoaderListener
+      nameFormat: "{Service:DetectedName} {ProcessGroup:KubernetesBasePodName}"
+      detectedServiceName: AbstractDataLoaderListener
+      operator: EQUALS
+    template: "java-service-name.json"
+- id: controller
+  type:
+    api: conditional-naming-service
+  config:
+    name: controller
+    parameters:
+      displayName: Controller + Appname
+      nameFormat: "{Service:DetectedName} {ProcessGroup:KubernetesBasePodName}"
+      detectedServiceName: Controller
+      operator: CONTAINS
+    template: "java-service-name.json"
+- id: atomikos
+  type:
+    api: conditional-naming-service
+  config:
+    name: atomikos
+    parameters:
+      displayName: atomikos Connections
+      nameFormat: "atomikos Connections {ProcessGroup:JavaJarFile}"
+      detectedServiceName: atomikos Connections
+      operator: EQUALS
+    template: "java-service-name.json"
+- id: mqconnectionfactory
+  type:
+    api: conditional-naming-service
+  config:
+    name: mqconnectionfactory
+    template: "mqconnectionfactory.json"
+- id: muletrax
+  type:
+    api: conditional-naming-service
+  config:
+    name: muletrax
+    template: "muletrax.json"
+- id: nettycleannaming
+  type:
+    api: conditional-naming-service
+  config:
+    name: nettycleannaming
+    template: "nettycleannaming.json"
