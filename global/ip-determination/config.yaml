@@ -1,0 +1,81 @@
+configs:
+- id: ip-determination-rproxy
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: ip-determination-rproxy
+    parameters:
+      headerName: rproxy_remote_address
+    template: ip-determination-template.json
+- id: ip-determination-true
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: ip-determination-true
+    parameters:
+      headerName: True-Client-IP
+    template: ip-determination-template.json
+- id: ip-determination-x-client
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: ip-determination-x-client
+    parameters:
+      headerName: X-Client-Ip
+    template: ip-determination-template.json
+- id: ip-determination-X-Cluster-Client-Ip
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: X-Cluster-Client-Ip
+    parameters:
+      headerName: X-Cluster-Client-Ip
+    template: ip-determination-template.json
+- id: ip-determination-X-Forwarded-For
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: X-Forwarded-For
+    parameters:
+      headerName: X-Forwarded-For
+    template: ip-determination-template.json
+- id: ip-determination-Forwarded
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: Forwarded
+    parameters:
+      headerName: Forwarded
+    template: ip-determination-template.json
+- id: ip-determination-X-Http-Client-Ip
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: X-Http-Client-Ip
+    parameters:
+      headerName: X-Http-Client-Ip
+    template: ip-determination-template.json
+- id: ip-determination-CF-Connecting-IP
+  type:
+    settings:
+      schema: builtin:rum.ip-determination
+      scope: environment
+  config:
+    name: CF-Connecting-IP
+    parameters:
+      headerName: CF-Connecting-IP
+    template: ip-determination-template.json

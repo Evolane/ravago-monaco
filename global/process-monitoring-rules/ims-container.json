@@ -1,0 +1,9 @@
+{
+    "enabled": true,
+    "mode": "MONITORING_ON",
+    "condition": {
+        "item": "KUBERNETES_CONTAINERNAME",
+        "operator": "CONTAINS",
+        "value": "IMS"
+    }
+}

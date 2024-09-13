@@ -2,6 +2,8 @@ manifestVersion: "1.0"
 projects:
 - name: global
   path: global
+# - name: conditional-naming
+#   path: conditional-naming
 environmentGroups:
 - name: Ravago
   environments:

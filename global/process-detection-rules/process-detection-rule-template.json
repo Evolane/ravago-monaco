@@ -1,0 +1,7 @@
+{
+    "enabled": true,
+    "ruleType": "{{.ruleType}}",
+    "groupIdentifier": "{{.groupIdentifier}}",
+    "instanceIdentifier": "{{.instanceIdentifier}}",
+    "processType": null
+}

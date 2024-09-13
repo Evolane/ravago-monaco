@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "processDetection": {
+        "property": "COMMAND_LINE_ARGS",
+        "containedString": "Dmule.home=",
+        "restrictToProcessType": null
+    },
+    "groupExtraction": {
+        "property": "COMMAND_LINE_ARGS",
+        "delimiter": {
+            "from": "Dmule.home=/opt/esb/app/",
+            "to": "/mule-enterprise-standalone",
+            "removeIds": false
+        },
+        "standaloneRule": true
+    },
+    "instanceExtraction": {
+        "property": "COMMAND_LINE_ARGS",
+        "delimiter": {
+            "from": "Dmule.home=/opt/esb/app/",
+            "to": "/mule-enterprise-standalone",
+            "removeIds": false
+        }
+    }
+}

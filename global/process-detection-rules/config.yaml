@@ -1,0 +1,23 @@
+configs:
+- id: ravago-oes-sm-name-process-detection-rule
+  type:
+    settings:
+      schema: builtin:process-group.simple-detection-rule
+      scope: environment
+  config:
+    name: ravago-oes-sm-name-process-detection-rule
+    parameters:
+      ruleType: prop
+      groupIdentifier : com.ravago.oes.sm.name
+      instanceIdentifier: ""
+    template: process-detection-rule-template.json
+
+#advanced rules
+- id: dhome-advanced-process-detection-rule
+  type:
+    settings:
+      schema: builtin:process-group.advanced-detection-rule
+      scope: environment
+  config:
+    name: dhome-advanced-process-detection-rule
+    template: Dmule-advanced-process-detection-rule.json

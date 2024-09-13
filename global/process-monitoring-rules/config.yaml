@@ -1,0 +1,9 @@
+configs:
+- id: ims-container-process-monitoring-rule
+  type:
+    settings:
+      schema: builtin:process.custom-process-monitoring-rule
+      scope: environment
+  config:
+    name: ims-container-process-monitoring-rule
+    template: ims-container.json

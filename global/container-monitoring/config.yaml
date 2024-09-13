@@ -1,0 +1,9 @@
+configs:
+- id: container-monitoring-tech
+  type:
+    settings:
+      schema: builtin:container.technology
+      scope: environment
+  config:
+    name: container-monitoring-tech
+    template: container-monitoring-tech.json

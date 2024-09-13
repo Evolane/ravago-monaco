@@ -1,0 +1,41 @@
+configs:
+- id: host-name-det-X-Forwarded-Host
+  type:
+    settings:
+      schema: builtin:rum.host-headers
+      scope: environment
+  config:
+    name: host-name-det-X-Forwarded-Host
+    parameters:
+      headerName: X-Forwarded-Host
+    template: host-name-determination-template.json
+- id: host-name-det-Forwarded
+  type:
+    settings:
+      schema: builtin:rum.host-headers
+      scope: environment
+  config:
+    name: host-name-det-Forwarded
+    parameters:
+      headerName: Forwarded
+    template: host-name-determination-template.json
+- id: host-name-det-X-Host
+  type:
+    settings:
+      schema: builtin:rum.host-headers
+      scope: environment
+  config:
+    name: host-name-det-X-Host
+    parameters:
+      headerName: X-Host
+    template: host-name-determination-template.json
+- id: host-name-det-Host
+  type:
+    settings:
+      schema: builtin:rum.host-headers
+      scope: environment
+  config:
+    name: host-name-det-Host
+    parameters:
+      headerName: Host
+    template: host-name-determination-template.json

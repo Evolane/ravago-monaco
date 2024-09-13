@@ -1,0 +1,10 @@
+{
+    "boshProcessManager": false,
+    "containerd": true,
+    "crio": true,
+    "docker": true,
+    "dockerWindows": false,
+    "garden": false,
+    "winc": false,
+    "podman": false
+}
