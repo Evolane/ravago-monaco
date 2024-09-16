@@ -1,0 +1,48 @@
+{
+    "name": "ClientID",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "parameterName": "X-ravago-clientId",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [
+                "STATIC"
+              ],
+              "className": "com.ravago.iam.auth.util.EntitlementNamespaceBuilder",
+              "methodName": "buildEntitlementNamespace",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

@@ -1,0 +1,34 @@
+{
+    "name": "OrderId",
+    "enabled": true,
+    "dataType": "INTEGER",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.domains.order.entity.Order",
+              "methodName": "getId",
+              "argumentTypes": [],
+              "returnType": "java.lang.Integer"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "FIRST",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

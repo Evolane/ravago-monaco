@@ -1,0 +1,259 @@
+configs:
+- id: ra-aleid
+  type:
+    api: request-attributes
+  config:
+    name: ra-aleid
+    template: aleid.json
+- id: ra-assumedavailability
+  type:
+    api: request-attributes
+  config:
+    name: ra-assumedavailability
+    template: assumedavailability.json
+- id: ra-atomikosconnectionpoolavailablesize
+  type:
+    api: request-attributes
+  config:
+    name: ra-atomikosconnectionpoolavailablesize
+    template: atomikosconnectionpoolavailablesize.json
+- id: ra-batchnos
+  type:
+    api: request-attributes
+  config:
+    name: ra-batchnos
+    template: batchnos.json
+- id: ra-batchreservationidstoignore
+  type:
+    api: request-attributes
+  config:
+    name: ra-batchreservationidstoignore
+    template: batchreservationidstoignore.json
+- id: ra-businessobjectid
+  type:
+    api: request-attributes
+  config:
+    name: ra-businessobjectid
+    template: businessobjectid.json
+- id: ra-businessunitids
+  type:
+    api: request-attributes
+  config:
+    name: ra-businessunitids
+    template: businessunitids.json
+- id: ra-clientid
+  type:
+    api: request-attributes
+  config:
+    name: ra-clientid
+    template: clientid.json
+- id: ra-confirminbounddeliverycommand
+  type:
+    api: request-attributes
+  config:
+    name: ra-confirminbounddeliverycommand
+    template: confirminbounddeliverycommand.json
+- id: ra-consumer
+  type:
+    api: request-attributes
+  config:
+    name: ra-consumer
+    template: consumer.json
+- id: ra-country
+  type:
+    api: request-attributes
+  config:
+    name: ra-country
+    template: country.json
+- id: ra-errordestination
+  type:
+    api: request-attributes
+  config:
+    name: ra-errordestination
+    template: errordestination.json
+- id: ra-graphmethod
+  type:
+    api: request-attributes
+  config:
+    name: ra-graphmethod
+    template: graphmethod.json
+- id: ra-iib_node
+  type:
+    api: request-attributes
+  config:
+    name: ra-iib_node
+    template: iib_node.json
+- id: ra-iscompensatenegativeavailability
+  type:
+    api: request-attributes
+  config:
+    name: ra-iscompensatenegativeavailability
+    template: iscompensatenegativeavailability.json
+- id: ra-isignorestockdate
+  type:
+    api: request-attributes
+  config:
+    name: ra-isignorestockdate
+    template: isignorestockdate.json
+- id: ra-isuncommittedread
+  type:
+    api: request-attributes
+  config:
+    name: ra-isuncommittedread
+    template: isuncommittedread.json
+- id: ra-neoload_ltn
+  type:
+    api: request-attributes
+  config:
+    name: ra-neoload_ltn
+    template: neoload_ltn.json
+- id: ra-neoload_si
+  type:
+    api: request-attributes
+  config:
+    name: ra-neoload_si
+    template: neoload_si.json
+- id: ra-neoload_tsn
+  type:
+    api: request-attributes
+  config:
+    name: ra-neoload_tsn
+    template: neoload_tsn.json
+- id: ra-neoload_vu
+  type:
+    api: request-attributes
+  config:
+    name: ra-neoload_vu
+    template: neoload_vu.json
+- id: ra-orderid
+  type:
+    api: request-attributes
+  config:
+    name: ra-orderid
+    template: orderid.json
+- id: ra-orderidtemp
+  type:
+    api: request-attributes
+  config:
+    name: ra-orderidtemp
+    template: orderidtemp.json
+- id: ra-ownerid
+  type:
+    api: request-attributes
+  config:
+    name: ra-ownerid
+    template: ownerid.json
+- id: ra-packagingId
+  type:
+    api: request-attributes
+  config:
+    name: ra-packagingId
+    template: packagingId.json
+- id: ra-plantid
+  type:
+    api: request-attributes
+  config:
+    name: ra-plantid
+    template: plantid.json
+- id: ra-productid
+  type:
+    api: request-attributes
+  config:
+    name: ra-productid
+    template: productid.json
+- id: ra-productreservationsidstoignore
+  type:
+    api: request-attributes
+  config:
+    name: ra-productreservationsidstoignore
+    template: productreservationsidstoignore.json
+- id: ra-purchaseOrder
+  type:
+    api: request-attributes
+  config:
+    name: ra-purchaseOrder
+    template: purchaseOrder.json
+- id: ra-redeliverycount
+  type:
+    api: request-attributes
+  config:
+    name: ra-redeliverycount
+    template: redeliverycount.json
+- id: ra-reserverstoignore
+  type:
+    api: request-attributes
+  config:
+    name: ra-reserverstoignore
+    template: reserverstoignore.json
+- id: ra-securitycontextv2
+  type:
+    api: request-attributes
+  config:
+    name: ra-securitycontextv2
+    template: securitycontextv2.json
+- id: ra-siteId
+  type:
+    api: request-attributes
+  config:
+    name: ra-siteId
+    template: siteId.json
+- id: ra-transactionid
+  type:
+    api: request-attributes
+  config:
+    name: ra-transactionid
+    template: transactionid.json
+- id: ra-unitofmeasure
+  type:
+    api: request-attributes
+  config:
+    name: ra-unitofmeasure
+    template: unitofmeasure.json
+- id: ra-updatematerialreservationsrequestbody
+  type:
+    api: request-attributes
+  config:
+    name: ra-updatematerialreservationsrequestbody
+    template: updatematerialreservationsrequestbody.json
+- id: ra-user
+  type:
+    api: request-attributes
+  config:
+    name: ra-user
+    template: user.json
+- id: ra-useragent
+  type:
+    api: request-attributes
+  config:
+    name: ra-useragent
+    template: useragent.json
+- id: ra-warehouseid
+  type:
+    api: request-attributes
+  config:
+    name: ra-warehouseid
+    template: warehouseid.json
+- id: ra-web_request_url
+  type:
+    api: request-attributes
+  config:
+    name: ra-web_request_url
+    template: web_request_url.json
+- id: ra-x_dyntrace_test
+  type:
+    api: request-attributes
+  config:
+    name: ra-x_dyntrace_test
+    template: x_dyntrace_test.json
+- id: ra-x_ravago_authenticationtoken
+  type:
+    api: request-attributes
+  config:
+    name: ra-x_ravago_authenticationtoken
+    template: x_ravago_authenticationtoken.json
+- id: ra-x_ravago_correlationid
+  type:
+    api: request-attributes
+  config:
+    name: ra-x_ravago_correlationid
+    template: x_ravago_correlationid.json

@@ -1,0 +1,52 @@
+{
+    "name": "UpdateMaterialReservationsRequestBody",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.reservation.material.rest.controller.MaterialReservationsControllerV3",
+              "methodName": "updateMaterialReservations",
+              "argumentTypes": [
+                "com.ravago.inventory.reservation.material.rest.dto.UpdateMaterialReservationPatchRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.reservation.material.rest.controller.MaterialReservationsControllerV3",
+              "methodName": "updateMaterialReservations",
+              "argumentTypes": [
+                "com.ravago.inventory.reservation.material.rest.dto.UpdateMaterialReservationsRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

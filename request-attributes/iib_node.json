@@ -1,0 +1,20 @@
+{
+    "name": "IIB Node",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "IIB_NODE",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "iibNodeType": "THROW_NODE"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

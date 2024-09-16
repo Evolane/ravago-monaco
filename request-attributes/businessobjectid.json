@@ -1,0 +1,116 @@
+{
+    "name": "BusinessObjectId",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.GenericEventConsumer",
+              "methodName": "handleEvent",
+              "argumentTypes": [
+                "com.ravago.eventbus.Event"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getBusinessObjectId()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "getBusinessObjectId",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "setBusinessObjectId",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.interceptor.EventConsumerInterceptorStrategies",
+              "methodName": "postHandle",
+              "argumentTypes": [
+                "com.ravago.eventbus.Event",
+                "java.lang.RuntimeException"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getBusinessObjectId()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.interceptor.EventConsumerInterceptorStrategies",
+              "methodName": "preHandle",
+              "argumentTypes": [
+                "com.ravago.eventbus.Event"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getBusinessObjectId()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

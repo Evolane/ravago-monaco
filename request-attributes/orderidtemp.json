@@ -1,0 +1,151 @@
+{
+    "name": "OrderIDTemp",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "valueExtractorRegex": "orderId: (\\d++)",
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "allocateMaterial",
+              "argumentTypes": [
+                "java.lang.Long",
+                "java.lang.String",
+                "com.ravago.jobbing.rest.order.domain.AllocateMaterialRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "combineOrders",
+              "argumentTypes": [
+                "java.lang.Long",
+                "com.ravago.jobbing.rest.order.domain.CombineOrderRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "createOrder",
+              "argumentTypes": [
+                "com.ravago.jobbing.rest.order.domain.OrderCreateRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "getOrder",
+              "argumentTypes": [
+                "java.lang.Long",
+                "java.lang.Boolean"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "getOrderCount",
+              "argumentTypes": [
+                "com.ravago.jobbing.rest.order.domain.OrderFilter"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "getOrders",
+              "argumentTypes": [
+                "com.ravago.jobbing.rest.order.domain.OrderFilter",
+                "java.lang.Integer",
+                "java.lang.Integer"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "putQuantity",
+              "argumentTypes": [
+                "java.lang.Long",
+                "com.ravago.jobbing.rest.order.domain.PutOrderQuantity"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.jobbing.rest.order.OrderControllerV2",
+              "methodName": "updateOrder",
+              "argumentTypes": [
+                "java.lang.Long",
+                "com.ravago.jobbing.rest.order.domain.OrderUpdateRequest"
+              ],
+              "returnType": "org.springframework.http.ResponseEntity"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

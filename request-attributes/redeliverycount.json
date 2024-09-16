@@ -1,0 +1,109 @@
+{
+    "name": "RedeliveryCount",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [
+                "STATIC"
+              ],
+              "className": "com.ravago.emc.mq.message.JmsProperties",
+              "methodName": "setRavagoRedeliveryCount",
+              "argumentTypes": [
+                "javax.jms.Message",
+                "int"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 2
+          }
+        ]
+      },
+      {
+        "enabled": false,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getErrorDestination",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getMaximumDelayedRedeliveries",
+              "argumentTypes": [],
+              "returnType": "int"
+            },
+            "capture": "METHOD_NAME"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getMaximumJmsXDeliveries",
+              "argumentTypes": [],
+              "returnType": "int"
+            },
+            "capture": "METHOD_NAME"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getRedeliveryDestination",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "METHOD_NAME"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "routeToErrorDestination",
+              "argumentTypes": [
+                "javax.jms.Message",
+                "java.lang.String"
+              ],
+              "returnType": "void"
+            },
+            "capture": "METHOD_NAME"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

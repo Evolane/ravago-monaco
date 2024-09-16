@@ -1,0 +1,95 @@
+{
+    "name": "ErrorDestination",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [
+                "ABSTRACT"
+              ],
+              "className": "com.ravago.eventbus.config.EventBusProperties",
+              "methodName": "getErrorDestination",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getErrorDestination",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PROTECTED",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.AbstractEventMessageListener",
+              "methodName": "getProperties",
+              "argumentTypes": [],
+              "returnType": "com.ravago.eventbus.config.EventBusProperties"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".getErrorDestination()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.GenericEventConsumer",
+              "methodName": "getErrorDestination",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "FIRST",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

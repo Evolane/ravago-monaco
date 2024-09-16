@@ -1,0 +1,50 @@
+{
+    "name": "ProductId",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "getProductIds",
+              "argumentTypes": [],
+              "returnType": "java.util.Set"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "setProductIds",
+              "argumentTypes": [
+                "java.util.Set"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

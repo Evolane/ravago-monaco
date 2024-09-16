@@ -4,16 +4,11 @@ projects:
   path: global
 # - name: conditional-naming
 #   path: conditional-naming
+# - name: request-attributes
+#   path: request-attributes
 environmentGroups:
 - name: Ravago
   environments:
-  # - name: Ravago_DEV
-  #   url:
-  #     value: https://maq38184.live.dynatrace.com/
-  #   auth:
-  #     token:
-  #       type: environment
-  #       name: RAVAGO_DEV_DYNATRACE_MONACO_TOKEN
   - name: Ravago_UAT
     url:
       value: https://rgt99956.live.dynatrace.com/
@@ -28,3 +23,10 @@ environmentGroups:
       token:
         type: environment
         name: RAVAGO_PRD_DYNATRACE_MONACO_TOKEN
+  # - name: Ravago_DEV
+  #   url:
+  #     value: https://maq38184.live.dynatrace.com/
+  #   auth:
+  #     token:
+  #       type: environment
+  #       name: RAVAGO_DEV_DYNATRACE_MONACO_TOKEN

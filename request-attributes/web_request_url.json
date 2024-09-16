@@ -1,0 +1,31 @@
+{
+    "name": "WebRequestURL",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "URI",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "scope": {},
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      },
+      {
+        "enabled": true,
+        "source": "URI",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "scope": {},
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "FIRST",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

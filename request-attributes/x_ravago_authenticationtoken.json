@@ -1,0 +1,21 @@
+{   
+    "name": "X-Ravago-AuthenticationToken",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "parameterName": "X-ravago-authenticationToken",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": true,
+    "skipPersonalDataMasking": true
+  }

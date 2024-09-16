@@ -1,0 +1,131 @@
+{
+    "name": "Consumer",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "ENDS_WITH",
+            "negate": false,
+            "value": "Impl"
+          },
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.interceptor.EventConsumerInterceptorStrategies",
+              "methodName": "postHandle",
+              "argumentTypes": [
+                "com.ravago.eventbus.Event",
+                "java.lang.RuntimeException"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getConsumerId()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.consumer.interceptor.EventConsumerInterceptorStrategies",
+              "methodName": "preHandle",
+              "argumentTypes": [
+                "com.ravago.eventbus.Event"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getConsumerId()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "ENDS_WITH",
+            "negate": false,
+            "value": "Impl"
+          },
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "addMetaData",
+              "argumentTypes": [
+                "java.lang.String",
+                "java.lang.Object"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 2,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "getConsumerId",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "obtainMetaData",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "java.lang.Object"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.Event",
+              "methodName": "setConsumerId",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

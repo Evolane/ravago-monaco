@@ -1,0 +1,48 @@
+{
+    "name": "UnitOfMeasure",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "getUnitOfMeasure",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "setUnitOfMeasure",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": true,
+    "skipPersonalDataMasking": true
+  }

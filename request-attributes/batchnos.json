@@ -1,0 +1,55 @@
+{
+    "name": "BatchNos",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "EQUALS",
+            "negate": true,
+            "value": "null"
+          },
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "getBatchNos",
+              "argumentTypes": [],
+              "returnType": "java.util.Set"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "setBatchNos",
+              "argumentTypes": [
+                "java.util.Set"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

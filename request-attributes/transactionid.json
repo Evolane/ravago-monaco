@@ -1,0 +1,44 @@
+{
+    "name": "TransactionId",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false,
+          "extractSubstring": {
+            "position": "BETWEEN",
+            "delimiter": "transactionId=",
+            "endDelimiter": ","
+          }
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [
+                "FINAL"
+              ],
+              "className": "com.ravago.wms.kernel.delivery.domainservice.inbound.InboundDeliveryConfirmationService",
+              "methodName": "confirm",
+              "argumentTypes": [
+                "java.util.Set"
+              ],
+              "returnType": "java.util.Set"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

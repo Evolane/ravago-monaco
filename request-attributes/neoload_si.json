@@ -1,0 +1,26 @@
+{
+    "name": "Neoload_SI",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "BEGINS_WITH",
+            "negate": false,
+            "value": "SI="
+          },
+          "splitAt": ";",
+          "trim": false
+        },
+        "parameterName": "X-Dynatrace-Test",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "FIRST",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

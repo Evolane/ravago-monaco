@@ -1,0 +1,21 @@
+{
+    "name": "X-Dyntrace-Test",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "splitAt": ";",
+          "trim": true
+        },
+        "parameterName": "x-dynatrace-test",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "TO_LOWER_CASE",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

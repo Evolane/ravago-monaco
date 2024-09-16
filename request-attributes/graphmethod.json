@@ -1,0 +1,201 @@
+{
+    "name": "GraphMethod",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": false,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "graphql.language.Document",
+              "methodName": "getDefinitions",
+              "argumentTypes": [],
+              "returnType": "java.util.List"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false,
+          "extractSubstring": {
+            "position": "BETWEEN",
+            "delimiter": "OperationDefinition{name='",
+            "endDelimiter": "'"
+          }
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PRIVATE",
+              "modifiers": [],
+              "className": "graphql.GraphQL",
+              "methodName": "execute",
+              "argumentTypes": [
+                "graphql.ExecutionInput",
+                "graphql.language.Document",
+                "graphql.schema.GraphQLSchema",
+                "graphql.execution.instrumentation.InstrumentationState"
+              ],
+              "returnType": "java.util.concurrent.CompletableFuture"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 2,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      },
+      {
+        "enabled": false,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PRIVATE",
+              "modifiers": [
+                "STATIC"
+              ],
+              "className": "org.springframework.graphql.server.webmvc.GraphQlHttpHandler",
+              "methodName": "readBody",
+              "argumentTypes": [
+                "org.springframework.web.servlet.function.ServerRequest"
+              ],
+              "returnType": "java.util.Map"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false,
+          "extractSubstring": {
+            "position": "BETWEEN",
+            "delimiter": "OperationDefinition{name='",
+            "endDelimiter": "'"
+          }
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "graphql.execution.Execution",
+              "methodName": "execute",
+              "argumentTypes": [
+                "graphql.language.Document",
+                "graphql.schema.GraphQLSchema",
+                "graphql.execution.ExecutionId",
+                "graphql.ExecutionInput",
+                "graphql.execution.instrumentation.InstrumentationState"
+              ],
+              "returnType": "java.util.concurrent.CompletableFuture"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false,
+          "extractSubstring": {
+            "position": "BETWEEN",
+            "delimiter": "Document{definitions=[OperationDefinition{name='",
+            "endDelimiter": "'"
+          }
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "graphql.execution.Execution",
+              "methodName": "execute",
+              "argumentTypes": [
+                "graphql.language.Document",
+                "graphql.schema.GraphQLSchema",
+                "graphql.execution.ExecutionId",
+                "graphql.ExecutionInput",
+                "graphql.execution.instrumentation.InstrumentationState"
+              ],
+              "returnType": "java.util.concurrent.CompletableFuture"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false,
+          "extractSubstring": {
+            "position": "BETWEEN",
+            "delimiter": "Document{definitions=[OperationDefinition{name='",
+            "endDelimiter": "'"
+          }
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PRIVATE",
+              "modifiers": [],
+              "className": "graphql.GraphQL",
+              "methodName": "execute",
+              "argumentTypes": [
+                "graphql.ExecutionInput",
+                "graphql.language.Document",
+                "graphql.schema.GraphQLSchema",
+                "graphql.execution.instrumentation.InstrumentationState"
+              ],
+              "returnType": "java.util.concurrent.CompletableFuture"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 2,
+            "deepObjectAccess": ".toString()"
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

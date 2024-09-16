@@ -1,0 +1,53 @@
+{
+    "name": "isIgnoreStockDate",
+    "enabled": true,
+    "dataType": "INTEGER",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "EQUALS",
+            "negate": true,
+            "value": "null"
+          },
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "isIgnoreStockDate",
+              "argumentTypes": [],
+              "returnType": "boolean"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "methodName": "setIgnoreStockDate",
+              "argumentTypes": [
+                "boolean"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": true
+  }

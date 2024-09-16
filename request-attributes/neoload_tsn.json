@@ -1,0 +1,26 @@
+{
+    "name": "Neoload_TSN",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "valueCondition": {
+            "operator": "BEGINS_WITH",
+            "negate": false,
+            "value": "TSN="
+          },
+          "splitAt": ";",
+          "trim": false
+        },
+        "parameterName": "X-Dynatrace-Test",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

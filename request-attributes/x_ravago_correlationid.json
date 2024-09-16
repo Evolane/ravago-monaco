@@ -1,0 +1,110 @@
+{
+    "name": "X-Ravago-CorrelationId",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.context.EventContextHolder",
+              "methodName": "get",
+              "argumentTypes": [],
+              "returnType": "com.ravago.eventbus.context.EventContext"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".getCorrelationId()"
+          },
+          {
+            "method": {
+              "visibility": "PRIVATE",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.context.EventContextHolder",
+              "methodName": "getEventContext",
+              "argumentTypes": [],
+              "returnType": "com.ravago.eventbus.context.EventContext"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0,
+            "deepObjectAccess": ".getCorrelationId()"
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.context.EventContextHolder",
+              "methodName": "set",
+              "argumentTypes": [
+                "com.ravago.eventbus.context.EventContext"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1,
+            "deepObjectAccess": ".getCorrelationId()"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "METHOD_PARAM",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "technology": "JAVA",
+        "methods": [
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.context.EventContext",
+              "methodName": "getCorrelationId",
+              "argumentTypes": [],
+              "returnType": "java.lang.String"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 0
+          },
+          {
+            "method": {
+              "visibility": "PUBLIC",
+              "modifiers": [],
+              "className": "com.ravago.eventbus.context.EventContext",
+              "methodName": "setCorrelationId",
+              "argumentTypes": [
+                "java.lang.String"
+              ],
+              "returnType": "void"
+            },
+            "capture": "ARGUMENT",
+            "argumentIndex": 1
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "source": "REQUEST_HEADER",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        },
+        "parameterName": "X-ravago-correlationId",
+        "capturingAndStorageLocation": "CAPTURE_AND_STORE_ON_SERVER"
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "FIRST",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }
