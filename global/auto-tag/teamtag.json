@@ -4,7 +4,7 @@
     "rules": [
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -23,7 +23,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -42,7 +42,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -59,7 +59,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -77,7 +77,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -96,7 +96,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "7of9",
+            "valueFormat": "ZevenOfNegen",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -116,28 +116,28 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Brewery)),not(entityName.startsWith(ohm))"
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Blewery)),not(entityName.startsWith(ohm))"
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Brewery))"
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Blewery))"
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Brewery))"
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Blewery))"
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -156,7 +156,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -175,7 +175,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -194,7 +194,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -213,7 +213,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -232,7 +232,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -251,7 +251,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -270,7 +270,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -289,7 +289,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -308,7 +308,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -327,7 +327,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -346,28 +346,28 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Manufacturing)),not(entityName.startsWith(BLUE))"
+            "entitySelector": "type(APPLICATION),fromRelationships.calls(type(SERVICE),tag(Team:Manufacturing-WMS)),not(entityName.startsWith(BLUE))"
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Manufacturing))"
+            "entitySelector": "type(QUEUE),toRelationships.propagatesTo(type(QUEUE),tag(Team:Manufacturing-WMS))"
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Manufacturing))"
+            "entitySelector": "type(QUEUE),toRelationships.indirectlySendsToQueue(type(SERVICE),tag(Team:Manufacturing-WMS))"
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -386,7 +386,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -405,7 +405,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -424,7 +424,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -443,7 +443,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -462,171 +462,14 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Customer portal",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "APPLICATION",
-                "conditions": [
-                    {
-                        "key": "WEB_APPLICATION_NAME",
-                        "operator": "BEGINS_WITH",
-                        "stringValue": "CUSTOMER PORTAL",
-                        "caseSensitive": true
-                    }
-                ]
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Customer portal",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "customer-portal",
-                        "caseSensitive": true
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Customer portal",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "customer.portal",
-                        "caseSensitive": true
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Customer portal",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "BEGINS_WITH",
-                        "stringValue": "customerportal",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "JOM",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "PROCESS_GROUP_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "jom",
-                        "caseSensitive": true
-                    }
-                ],
-                "serviceToHostPropagation": true,
-                "serviceToPGPropagation": true
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "JOM",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "jom",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "JOM",
+            "valueFormat": "Blewery",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:JOM))"
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:Blewery))"
         },
         {
             "enabled": true,
-            "valueFormat": "Brewery",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:Brewery))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Credit Control",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_DATABASE_NAME",
-                        "operator": "EQUALS",
-                        "stringValue": "ravhot",
-                        "caseSensitive": true
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Credit Control",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "credit",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": true,
-                "serviceToPGPropagation": true
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -645,7 +488,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -664,7 +507,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -683,7 +526,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -702,7 +545,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -721,7 +564,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -740,7 +583,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -759,7 +602,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -778,7 +621,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -797,7 +640,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -816,7 +659,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -835,7 +678,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -854,7 +697,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Finance",
+            "valueFormat": "House of Finance",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -873,7 +716,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -892,7 +735,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -917,7 +760,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -926,7 +769,7 @@
                     {
                         "key": "HOST_TAGS",
                         "operator": "EQUALS",
-                        "tag": "Team:Integrations"
+                        "tag": "Team:ESB-Team"
                     }
                 ],
                 "hostToPGPropagation": false
@@ -934,7 +777,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -943,7 +786,7 @@
                     {
                         "key": "SERVICE_TAGS",
                         "operator": "EQUALS",
-                        "tag": "Team:Integrations"
+                        "tag": "Team:ESB-Team"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -952,21 +795,40 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
             "entitySelector": "type(QUEUE),queueVendorName(JMS_IIB)"
         },
         {
             "enabled": true,
-            "valueFormat": "Integrations",
+            "valueFormat": "ESB-Team",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
             "entitySelector": "type(QUEUE),entityname.startsWith(IBMDATACENTER.IIB)"
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Master-Data",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "master-data",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -983,7 +845,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1000,7 +862,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1017,7 +879,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Manufactoring",
+            "valueFormat": "Manufacturing-WMS",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1034,7 +896,127 @@
         },
         {
             "enabled": true,
-            "valueFormat": "MFG",
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(gateway-app))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(customer-portal))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(customer-portal))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(gateway-app))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "AZURE",
+                "conditions": [
+                    {
+                        "key": "AZURE_SUBSCRIPTION_UUID",
+                        "operator": "EXISTS"
+                    }
+                ],
+                "azureToServicePropagation": true,
+                "azureToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "PROCESS_GROUP",
+                "conditions": [
+                    {
+                        "key": "CLOUD_APPLICATION_NAMESPACE_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "customer-portal",
+                        "caseSensitive": true
+                    }
+                ],
+                "pgToHostPropagation": false,
+                "pgToServicePropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION_NAMESPACE),detectedName(customer-portal)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE),toRelationships.isNamespaceOfKubernetesSvc(type(CLOUD_APPLICATION_NAMESPACE), entityName.contains(customer-portal))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(KUBERNETES_SERVICE),toRelationships.isNamespaceOfKubernetesSvc(type(CLOUD_APPLICATION_NAMESPACE), entityName.contains(ravapps)),entityName.contains(customer-portal)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION),toRelationships.isNamespaceOfCa(type(CLOUD_APPLICATION_NAMESPACE), entityName(customer-portal))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION),entityName.contains(gateway-app)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Digital Platform",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app)"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Squad-MFG1",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1052,7 +1034,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "MFG",
+            "valueFormat": "Squad-MFG1",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1061,7 +1043,7 @@
                     {
                         "key": "SERVICE_TAGS",
                         "operator": "EQUALS",
-                        "tag": "Application:Master-Data"
+                        "tag": "Team:Master-Data"
                     }
                 ],
                 "serviceToHostPropagation": false,
@@ -1070,7 +1052,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "MFG",
+            "valueFormat": "Squad-MFG1",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1088,7 +1070,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "MFG",
+            "valueFormat": "Squad-MFG1",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1106,7 +1088,7 @@
         },
         {
             "enabled": true,
-            "valueFormat": "MFG",
+            "valueFormat": "Squad-Squad-MFG11",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
@@ -1115,7 +1097,52 @@
                     {
                         "key": "SERVICE_TAGS",
                         "operator": "EQUALS",
-                        "tag": "Team:JOM"
+                        "tag": "Application:JOM"
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Blewery",
+            "valueNormalization": "Leave text as-is",
+            "type": "SELECTOR",
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(Team:Blewery))"
+        },
+        {
+            "enabled": true,
+            "valueFormat": "ESB-Team",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "integrations",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Master-Data",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_DETECTED_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "master-data",
+                        "caseSensitive": false
                     }
                 ],
                 "serviceToHostPropagation": false,

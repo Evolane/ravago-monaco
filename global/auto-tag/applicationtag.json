@@ -513,44 +513,6 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Master-Data",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "PROCESS_GROUP_DETECTED_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "master-data",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Master-Data",
-            "valueNormalization": "Leave text as-is",
-            "type": "ME",
-            "attributeRule": {
-                "entityType": "SERVICE",
-                "conditions": [
-                    {
-                        "key": "SERVICE_DETECTED_NAME",
-                        "operator": "CONTAINS",
-                        "stringValue": "master-data",
-                        "caseSensitive": false
-                    }
-                ],
-                "serviceToHostPropagation": false,
-                "serviceToPGPropagation": false
-            }
-        },
-        {
-            "enabled": true,
             "valueFormat": "MRP",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
@@ -933,123 +895,160 @@
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(gateway-app))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(SERVICE), fromRelationships.isServiceOf(type(CLOUD_APPLICATION),entityName.contains(customer-portal))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(customer-portal))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
-            "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(KUBERNETES_SERVICE), fromRelationships.isKubernetesSvcOfCa(type(CLOUD_APPLICATION),entityName.contains(gateway-app))"
-        },
-        {
-            "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "Customer portal",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
-                "entityType": "AZURE",
+                "entityType": "APPLICATION",
                 "conditions": [
                     {
-                        "key": "AZURE_SUBSCRIPTION_UUID",
-                        "operator": "EXISTS"
+                        "key": "WEB_APPLICATION_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "CUSTOMER PORTAL",
+                        "caseSensitive": true
                     }
-                ],
-                "azureToServicePropagation": true,
-                "azureToPGPropagation": true
+                ]
             }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "Customer portal",
             "valueNormalization": "Leave text as-is",
             "type": "ME",
             "attributeRule": {
-                "entityType": "PROCESS_GROUP",
+                "entityType": "SERVICE",
                 "conditions": [
                     {
-                        "key": "CLOUD_APPLICATION_NAMESPACE_NAME",
-                        "operator": "EQUALS",
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
                         "stringValue": "customer-portal",
                         "caseSensitive": true
                     }
                 ],
-                "pgToHostPropagation": false,
-                "pgToServicePropagation": true
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
             }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "Customer portal",
             "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(CLOUD_APPLICATION_NAMESPACE),detectedName(customer-portal)"
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "customer.portal",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "Customer portal",
             "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(KUBERNETES_SERVICE),toRelationships.isNamespaceOfKubernetesSvc(type(CLOUD_APPLICATION_NAMESPACE), entityName.contains(customer-portal))"
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "BEGINS_WITH",
+                        "stringValue": "customerportal",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "JOM",
             "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(KUBERNETES_SERVICE),toRelationships.isNamespaceOfKubernetesSvc(type(CLOUD_APPLICATION_NAMESPACE), entityName.contains(ravapps)),entityName.contains(customer-portal)"
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "PROCESS_GROUP_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "jom",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "JOM",
             "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(CLOUD_APPLICATION),toRelationships.isNamespaceOfCa(type(CLOUD_APPLICATION_NAMESPACE), entityName(customer-portal))"
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "jom",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "JOM",
             "valueNormalization": "Leave text as-is",
             "type": "SELECTOR",
-            "entitySelector": "type(CLOUD_APPLICATION),entityName.contains(gateway-app)"
+            "entitySelector": "type(SERVICE),databaseName.exists(),toRelationships.calls(type(SERVICE),tag(NonTeam:JOM))"
         },
         {
             "enabled": true,
-            "valueFormat": "Nfuse Digital Platform",
+            "valueFormat": "Credit Control",
             "valueNormalization": "Leave text as-is",
-            "type": "SELECTOR",
-            "entitySelector": "type(CLOUD_APPLICATION),entityName.contains(ravago-messenger-app)"
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_DATABASE_NAME",
+                        "operator": "EQUALS",
+                        "stringValue": "ravhot",
+                        "caseSensitive": true
+                    }
+                ],
+                "serviceToHostPropagation": false,
+                "serviceToPGPropagation": false
+            }
+        },
+        {
+            "enabled": true,
+            "valueFormat": "Credit Control",
+            "valueNormalization": "Leave text as-is",
+            "type": "ME",
+            "attributeRule": {
+                "entityType": "SERVICE",
+                "conditions": [
+                    {
+                        "key": "SERVICE_NAME",
+                        "operator": "CONTAINS",
+                        "stringValue": "credit",
+                        "caseSensitive": false
+                    }
+                ],
+                "serviceToHostPropagation": true,
+                "serviceToPGPropagation": true
+            }
         }
     ]
 }

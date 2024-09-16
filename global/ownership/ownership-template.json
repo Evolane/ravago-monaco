@@ -1,0 +1,27 @@
+{
+    "name": "{{.ownershipName}}",
+    "description": "{{.description}}",
+    "identifier": "{{.ownershipName}}",
+    "supplementaryIdentifiers": [],
+    "responsibilities": {
+        "development": {{.resDev}},
+        "security": {{.resSec}},
+        "operations": {{.resOp}},
+        "infrastructure": {{.resInfra}},
+        "lineOfBusiness": {{.resBiz}}
+    },
+    "contactDetails": [
+        {
+            "integrationType": "EMAIL",
+            "email": "{{.email}}"
+        }
+    ],
+    "links": [
+        {
+            "linkType": "URL",
+            "url": "{{.url}}"
+        }
+    ],
+    "additionalInformation": [],
+    "externalId": null
+}
