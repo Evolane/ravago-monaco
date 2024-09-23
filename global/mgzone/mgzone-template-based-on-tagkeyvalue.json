@@ -102,6 +102,11 @@
             "enabled": true,
             "type": "SELECTOR",
             "entitySelector": "type(PROCESS_GROUP_INSTANCE),fromRelationships.isProcessOf(type(HOST),tag({{.tagkeyvalue}}))"
+        },
+        {
+            "enabled": true,
+            "type": "SELECTOR",
+            "entitySelector": "type(os:service),fromRelationship.runsOn(type(HOST),tag({{.tagkeyvalue}}))"
         }
     ]
 }

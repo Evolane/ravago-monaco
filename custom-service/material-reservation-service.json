@@ -1,0 +1,365 @@
+{
+    "name": "MaterialReservationService",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.inventory.reservation.material.service.MaterialReservationService",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "automateMaterialReservations",
+            "argumentTypes": [
+              "java.util.List",
+              "com.ravago.webapp.security.model.UserPrincipal"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "closeMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.common.Reference"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "createCrudMaterialReservationHelper",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.UpdateMaterialReservations"
+            ],
+            "returnType": "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "createMaterialReservationsIfNeeded",
+            "argumentTypes": [
+              "com.ravago.webapp.security.model.UserPrincipal",
+              "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "defaultAvailabilityRequest",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest"
+            ],
+            "returnType": "com.ravago.inventory.availability.material.calculation.AvailabilityParameters$AvailabilityParametersBuilder",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "dontAssignLowerPrioReserversIfHigherOneFailed",
+            "argumentTypes": [
+              "com.ravago.inventory.repository.reservation.product.ProductReservationEntity"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": [
+              "STATIC"
+            ]
+          },
+          {
+            "methodName": "evaluateWhichReferencesToIgnoreFreeUpStockAndRejectIfNeeded",
+            "argumentTypes": [
+              "java.util.List",
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest",
+              "com.ravago.inventory.common.Quantity"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailableQuantityIgnoringLowerPriorityReferences",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest",
+              "java.util.List"
+            ],
+            "returnType": "com.ravago.inventory.common.Quantity",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "getBatchNumbers",
+            "argumentTypes": [
+              "java.util.Set"
+            ],
+            "returnType": "java.util.Set",
+            "visibility": "PRIVATE",
+            "modifiers": [
+              "STATIC"
+            ]
+          },
+          {
+            "methodName": "getCurrentAvailableQuantity",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest"
+            ],
+            "returnType": "com.ravago.inventory.common.Quantity",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "getExistingProductReservationsForRequests",
+            "argumentTypes": [
+              "java.util.List"
+            ],
+            "returnType": "java.util.List",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "getMaterialReservationQuantities",
+            "argumentTypes": [
+              "com.ravago.inventory.common.ReferenceType",
+              "java.lang.String"
+            ],
+            "returnType": "com.ravago.inventory.reservation.material.domain.MaterialReservationQuantities",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.repository.reservation.ReferenceEntity"
+            ],
+            "returnType": "java.util.List",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getMaterialReservationsByGroup",
+            "argumentTypes": [
+              "com.ravago.inventory.repository.reservation.ReferenceEntity"
+            ],
+            "returnType": "java.util.List",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getProductReservationsToUnreserve",
+            "argumentTypes": [
+              "java.util.List",
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest"
+            ],
+            "returnType": "java.util.Set",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "getReferencesToIgnore",
+            "argumentTypes": [
+              "java.util.List",
+              "int",
+              "java.util.Set"
+            ],
+            "returnType": "java.util.List",
+            "visibility": "PRIVATE",
+            "modifiers": [
+              "STATIC"
+            ]
+          },
+          {
+            "methodName": "handleTransferRequestAnswer",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.batch.assignment.transfer.request.answer.TransferRequestAnswer"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "hasAvailabilityImprovedAfterIgnoringLowerPriorityReferences",
+            "argumentTypes": [
+              "com.ravago.inventory.common.Quantity",
+              "com.ravago.inventory.common.Quantity",
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": [
+              "STATIC"
+            ]
+          },
+          {
+            "methodName": "hasNoBatchAssignments",
+            "argumentTypes": [
+              "com.ravago.inventory.repository.reservation.product.ProductReservationEntity"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "increaseMaterialReservationsIfNeeded",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "isValidOrRejectIfInvalidWithReservationDateChanged",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.TransferQualifierWithTarget"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "lowerMaterialReservationsIfNeeded",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "publishMaterialAllocationChangedEvents",
+            "argumentTypes": [
+              "java.util.Set"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "rejectMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.common.Reference"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "rejectTransferApprovalPendingIfNeeded",
+            "argumentTypes": [
+              "java.util.Set"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "rejectTransferApprovalPendingIfNeededForBatchNumbers",
+            "argumentTypes": [
+              "java.util.Set"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "removeMaterialReservationsIfNeeded",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "shouldCancel",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.PartialUpdateMaterialReservation",
+              "com.ravago.inventory.repository.reservation.product.ProductReservationEntity"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "shouldCancel",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.PartialUpdateMaterialReservation",
+              "java.util.List"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "skipWhenProductReservationAlreadyConfirmed",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.product.RegisterProductReservationRequest"
+            ],
+            "returnType": "boolean",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "transferMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.MaterialReservationsTransfer"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "updateMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.UpdateMaterialReservations",
+              "com.ravago.webapp.security.model.UserPrincipal"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "updateMaterialReservations",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.PartialUpdateMaterialReservation"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "validate",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.service.UpdateMaterialReservationsHelper"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "validate",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.PartialUpdateMaterialReservation",
+              "java.util.List"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          },
+          {
+            "methodName": "validateTransferResult",
+            "argumentTypes": [
+              "com.ravago.inventory.reservation.material.domain.MaterialReservationsTransfer"
+            ],
+            "returnType": "void",
+            "visibility": "PRIVATE",
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": false,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }

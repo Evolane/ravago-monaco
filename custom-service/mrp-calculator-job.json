@@ -1,0 +1,25 @@
+{
+    "name": "mrp replenishment calculator job",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.mrp.replenishment.scheduler.ReplenishmentScheduledTask",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "recalculateMaterialToReplenish",
+            "argumentTypes": [],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": false,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }

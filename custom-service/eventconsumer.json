@@ -1,0 +1,29 @@
+{
+  "name": "EventConsumer",
+  "enabled": true,
+  "rules": [
+    {
+      "enabled": true,
+      "fileName": "",
+      "className": "com.ravago.eventbus.consumer.support.EventConsumer",
+      "matcher": "EQUALS",
+      "methodRules": [
+        {
+          "methodName": "handleEvent",
+          "argumentTypes": [
+            "com.ravago.eventbus.Event"
+          ],
+          "returnType": "void",
+          "visibility": "PUBLIC",
+          "modifiers": [
+            "ABSTRACT"
+          ]
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "queueEntryPoint": false,
+  "queueEntryPointType": null,
+  "processGroups": []
+}

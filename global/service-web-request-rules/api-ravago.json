@@ -1,0 +1,32 @@
+{
+    "enabled": true,
+    "name": "api.ravago.com",
+    "description": "Separate service for API Connect",
+    "managementZones": [],
+    "idContributors": {
+        "applicationId": {
+            "enableIdContributor": false
+        },
+        "contextRoot": {
+            "enableIdContributor": false
+        },
+        "publicDomainName": {
+            "enableIdContributor": true,
+            "serviceIdContributor": {
+                "contributionType": "OriginalValue",
+                "copyFromHostName": true
+            }
+        },
+        "portForServiceId": true
+    },
+    "conditions": [
+        {
+            "attribute": "HostName",
+            "compareOperationType": "StringEquals",
+            "textValues": [
+                "api.ravago.com"
+            ],
+            "ignoreCase": false
+        }
+    ]
+}

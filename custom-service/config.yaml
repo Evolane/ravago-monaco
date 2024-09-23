@@ -1,0 +1,49 @@
+configs:
+- id: custom-service-java-eventconsumer
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-eventconsumer
+    template: eventconsumer.json
+- id: custom-service-java-atomikos-connections
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-atomikos-connections
+    template: atomikos-connections.json
+- id: custom-service-java-availability-service
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-availability-service
+    template: availability-service.json
+- id: custom-service-java-mailhandler
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-mailhandler
+    template: mailhandler.json
+- id: custom-service-java-material-reservation-service
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-material-reservation-service
+    template: material-reservation-service.json
+- id: custom-service-java-mq-connection-factory
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-mq-connection-factory
+    template: mq-connection-factory.json
+- id: custom-service-mrp-calculator-job
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-mrp-calculator-job
+    template: mrp-calculator-job.json
+- id: custom-service-java-mrp-calculator
+  type:
+    api: custom-service-java
+  config:
+    name: custom-service-java-mrp-calculator
+    template: mrp-calculator.json

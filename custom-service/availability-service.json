@@ -1,0 +1,141 @@
+{
+    "name": "AvailabilityService",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.inventory.availability.material.service.AvailabilityService",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "getAvailabilityHierarchy",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.util.Set",
+              "java.time.LocalDate",
+              "boolean"
+            ],
+            "returnType": "com.ravago.inventory.common.AvailabilityHierarchyResponse",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailabilityHierarchy",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.util.Set",
+              "java.time.LocalDate"
+            ],
+            "returnType": "com.ravago.inventory.common.AvailabilityHierarchyResponse",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailabilityStatus",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.util.List",
+              "java.util.List"
+            ],
+            "returnType": "com.ravago.inventory.common.AvailabilityStatus",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailabilityStatus",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.util.List",
+              "java.util.List",
+              "com.ravago.inventory.common.Quantity",
+              "java.time.LocalDate"
+            ],
+            "returnType": "com.ravago.inventory.common.AvailabilityStatus",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailableQuantity",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate",
+              "java.util.List",
+              "java.util.List"
+            ],
+            "returnType": "com.ravago.inventory.availability.material.calculation.CalculatedQuantities",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getAvailableQuantity",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate"
+            ],
+            "returnType": "com.ravago.inventory.availability.material.calculation.CalculatedQuantities",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getDetailedStockProjection",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate",
+              "java.time.LocalDate"
+            ],
+            "returnType": "com.ravago.inventory.availability.material.calculation.DetailedStockProjection",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getStockOnHand",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters"
+            ],
+            "returnType": "com.ravago.inventory.common.Quantity",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getStockPhysicallyPresent",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate",
+              "com.ravago.inventory.availability.material.calculation.StockPhysicallyPresentDefinition"
+            ],
+            "returnType": "com.ravago.inventory.common.Quantity",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getStockProjection",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate",
+              "java.time.LocalDate",
+              "java.util.function.Consumer"
+            ],
+            "returnType": "java.util.TreeMap",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          },
+          {
+            "methodName": "getStockProjection",
+            "argumentTypes": [
+              "com.ravago.inventory.availability.material.calculation.AvailabilityParameters",
+              "java.time.LocalDate",
+              "java.time.LocalDate"
+            ],
+            "returnType": "java.util.TreeMap",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": false,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }

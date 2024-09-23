@@ -1,0 +1,17 @@
+configs:
+- id: s-d-full-web-request-ohm-verison-removal
+  type:
+    settings:
+      schema: builtin:service-detection.full-web-request
+      scope: environment
+  config:
+    name: s-d-full-web-request-ohm-verison-removal
+    template: ohm-version-removeal.json
+- id: s-d-external-web-request-api-ravago
+  type:
+    settings:
+      schema: builtin:service-detection.external-web-request
+      scope: environment
+  config:
+    name: s-d-external-web-request-api-ravago
+    template: api-ravago.json

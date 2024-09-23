@@ -1,0 +1,31 @@
+configs:
+- id: calc-metric-dispatchcount
+  type:
+    api: calculated-metrics-service
+  config:
+    name: calc-metric-dispatchcount
+    template: calc-metric-dispatchcount.json
+- id: calc-metric-edicom
+  type:
+    api: calculated-metrics-service
+  config:
+    name: calc-metric-edicom
+    template: calc-metric-edicom.json
+- id: calc-metric-edicom2
+  type:
+    api: calculated-metrics-service
+  config:
+    name: calc-metric-edicom2
+    template: calc-metric-edicom2.json
+- id: calc-metric-saleforce
+  type:
+    api: calculated-metrics-service
+  config:
+    name: calc-metric-saleforce
+    template: calc-metric-saleforce.json
+- id: calc-metric-teamdesk
+  type:
+    api: calculated-metrics-service
+  config:
+    name: calc-metric-teamdesk
+    template: calc-metric-teamdesk.json

@@ -1,0 +1,30 @@
+{
+    "tsmMetricKey": "calc:service.salesforcecreditlimitrequestcount",
+    "name": "SalesForce Credit Limit Request Count",
+    "enabled": true,
+    "ignoreMutedRequests": false,
+    "metricDefinition": {
+        "metric": "REQUEST_COUNT",
+        "requestAttribute": null
+    },
+    "unit": "COUNT",
+    "unitDisplayName": "",
+    "entityId": null,
+    "managementZones": [
+        "Integrations"
+    ],
+    "conditions": [
+        {
+            "attribute": "CUSTOMSERVICE_METHOD",
+            "comparisonInfo": {
+                "type": "STRING",
+                "comparison": "CONTAINS",
+                "value": "Sf_CreditLimits",
+                "values": null,
+                "negate": false,
+                "caseSensitive": false
+            }
+        }
+    ],
+    "dimensionDefinition": null
+}

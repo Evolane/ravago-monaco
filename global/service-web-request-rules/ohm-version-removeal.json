@@ -1,0 +1,36 @@
+{
+    "enabled": true,
+    "name": "Ohm version removal",
+    "description": "Remove Ohm versions from the contextroot",
+    "managementZones": [],
+    "idContributors": {
+        "applicationId": {
+            "enableIdContributor": false
+        },
+        "contextRoot": {
+            "enableIdContributor": true,
+            "serviceIdContributor": {
+                "contributionType": "TransformValue",
+                "transformations": [
+                    {
+                        "transformationType": "BEFORE",
+                        "suffix": "-"
+                    }
+                ]
+            }
+        },
+        "serverName": {
+            "enableIdContributor": false
+        }
+    },
+    "conditions": [
+        {
+            "attribute": "ApplicationId",
+            "compareOperationType": "StringEquals",
+            "textValues": [
+                "ohm-web"
+            ],
+            "ignoreCase": false
+        }
+    ]
+}

@@ -55,7 +55,6 @@ configs:
   config:
     name: sor-tag
     template: sor-tag.json
-
 - id: teams-tag
   type:
     settings:

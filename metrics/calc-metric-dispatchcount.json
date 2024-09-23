@@ -1,0 +1,46 @@
+{
+    "tsmMetricKey": "calc:service.service.despatchadvice_count",
+    "name": "DespatchAdvice_Count",
+    "enabled": true,
+    "ignoreMutedRequests": false,
+    "metricDefinition": {
+      "metric": "REQUEST_COUNT",
+      "requestAttribute": null
+    },
+    "unit": "COUNT",
+    "unitDisplayName": "",
+    "entityId": null,
+    "managementZones": [],
+    "conditions": [
+      {
+        "attribute": "ESB_APPLICATION_NAME",
+        "comparisonInfo": {
+          "type": "STRING",
+          "comparison": "EQUALS",
+          "value": "Log_Despatch_Advice",
+          "values": null,
+          "negate": false,
+          "caseSensitive": false
+        }
+      },
+      {
+        "attribute": "REQUEST_TYPE",
+        "comparisonInfo": {
+          "type": "STRING",
+          "comparison": "EQUALS",
+          "value": "Default requests",
+          "values": null,
+          "negate": false,
+          "caseSensitive": false
+        }
+      }
+    ],
+    "dimensionDefinition": {
+      "name": "Dimension",
+      "dimension": "{Request:Name}",
+      "placeholders": [],
+      "topX": 10,
+      "topXDirection": "DESCENDING",
+      "topXAggregation": "SINGLE_VALUE"
+    }
+  }

@@ -1,0 +1,24 @@
+{
+    "name": "mailhandler",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.mailhandler.reader.MailReader$1",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "public void messagesAdded",
+            "returnType": "void",
+            "visibility": null,
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": true,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }

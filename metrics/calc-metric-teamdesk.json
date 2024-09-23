@@ -1,0 +1,37 @@
+{
+    "tsmMetricKey": "calc:service.pkb_teamdesk_count",
+    "name": "PKB_Teamdesk_Count",
+    "enabled": true,
+    "ignoreMutedRequests": false,
+    "metricDefinition": {
+      "metric": "REQUEST_COUNT",
+      "requestAttribute": null
+    },
+    "unit": "COUNT",
+    "unitDisplayName": "",
+    "entityId": null,
+    "managementZones": [
+      "Integrations"
+    ],
+    "conditions": [
+      {
+        "attribute": "SERVICE_DISPLAY_NAME",
+        "comparisonInfo": {
+          "type": "FAST_STRING",
+          "comparison": "CONTAINS",
+          "value": "TeamDesk",
+          "values": null,
+          "negate": false,
+          "caseSensitive": false
+        }
+      }
+    ],
+    "dimensionDefinition": {
+      "name": "Request Name",
+      "dimension": "{Request:Name}",
+      "placeholders": [],
+      "topX": 10,
+      "topXDirection": "DESCENDING",
+      "topXAggregation": "SINGLE_VALUE"
+    }
+  }

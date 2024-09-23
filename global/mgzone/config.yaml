@@ -1,12 +1,364 @@
 configs:
-  - id: Application-CRM
+  - id: Team:Blewery
     type:
       settings:
         scope: environment
         schema: builtin:management-zones
     config:
-      name: Application-CRM
+      name: Team:Blewery
       template: mgzone-template-based-on-tagkeyvalue.json
       parameters:
-        mgzonename: "Application-CRM"
-        tagkeyvalue: "Application:CRM"
+        mgzonename: Team:Blewery
+        tagkeyvalue: Team:Blewery
+  - id: Team:Digital-Platform
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:Digital-Platform
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:Digital-Platform
+        tagkeyvalue: Team:Digital Platform
+  - id: Team:ESB-Team
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:ESB-Team
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:ESB-Team
+        tagkeyvalue: Team:ESB-Team
+  - id: Team:House-of-Finance
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:House-of-Finance
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:House of Finance
+        tagkeyvalue: Team:House of Finance
+  - id: Team:Manufacturing-WMS
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:Manufacturing-WMS
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:Manufacturing-WMS
+        tagkeyvalue: Team:Manufacturing-WMS
+  - id: Team:Master-Data
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:Master-Data
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:Master-Data
+        tagkeyvalue: Team:Master-Data
+  - id: Team:Squad-MFG1
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:Squad-MFG1
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:Squad-MFG1
+        tagkeyvalue: Team:Squad-MFG1
+  - id: Team:ZevenOfNegen
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Team:ZevenOfNegen
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Team:ZevenOfNegen
+        tagkeyvalue: Team:ZevenOfNegen
+  - id: Application:Calendar
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Calendar
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Calendar
+        tagkeyvalue: Application:Calendar
+  - id: Application:Commission-app
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Commission-app
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Commission-app
+        tagkeyvalue: Application:Commission-app
+  - id: Application:Credit-Control
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Credit Control
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Credit Control
+        tagkeyvalue: Application:Credit Control
+  - id: Application:CRM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:CRM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:CRM
+        tagkeyvalue: Application:CRM
+  - id: Application:Customer portal
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Customer portal
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Customer portal
+        tagkeyvalue: Application:Customer portal
+  - id: Application:HighJump
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:HighJump
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:HighJump
+        tagkeyvalue: Application:HighJump
+  - id: Application:IAM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:IAM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:IAM
+        tagkeyvalue: Application:IAM
+  - id: Application:ICP
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:ICP
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:ICP
+        tagkeyvalue: Application:ICP
+  - id: Application:ICR
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:ICR
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:ICR
+        tagkeyvalue: Application:ICR
+  - id: Application:IIB
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:IIB
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:IIB
+        tagkeyvalue: Application:IIB
+  - id: Application:IMS
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:IMS
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:IMS
+        tagkeyvalue: Application:IMS
+  - id: Application:Inventory
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Inventory
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Inventory
+        tagkeyvalue: Application:Inventory
+  - id: Application:JOA
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:JOA
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:JOA
+        tagkeyvalue: Application:JOA
+  - id: Application:JOM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:JOM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:JOM
+        tagkeyvalue: Application:JOM
+  - id: Application:Keycloak
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Keycloak
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Keycloak
+        tagkeyvalue: Application:Keycloak
+  - id: Application:MRP
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:MRP
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:MRP
+        tagkeyvalue: Application:MRP
+  - id: Application:ODM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:ODM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:ODM
+        tagkeyvalue: Application:ODM
+  - id: Application:OHM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:OHM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:OHM
+        tagkeyvalue: Application:OHM
+  - id: Application:OPUS
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:OPUS
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:OPUS
+        tagkeyvalue: Application:OPUS
+  - id: Application:OTM
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:OTM
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:OTM
+        tagkeyvalue: Application:OTM
+  - id: Application:Pricing-System-App
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Pricing-System-App
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Pricing-System-App
+        tagkeyvalue: Application:Pricing-System-App
+  - id: Application:Recipe-Management
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Recipe-Management
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Recipe-Management
+        tagkeyvalue: Application:Recipe-Management
+  - id: Application:Shopfloor
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:Shopfloor
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:Shopfloor
+        tagkeyvalue: Application:Shopfloor
+  - id: Application:WMS
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:WMS
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:WMS
+        tagkeyvalue: Application:WMS
+  - id: Application:DMS
+    type:
+      settings:
+        scope: environment
+        schema: builtin:management-zones
+    config:
+      name: Application:DMS
+      template: mgzone-template-based-on-tagkeyvalue.json
+      parameters:
+        mgzonename: Application:DMS
+        tagkeyvalue: Application:DMS

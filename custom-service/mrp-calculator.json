@@ -1,0 +1,27 @@
+{
+    "name": "mrp replenishment calculator",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.mrp.replenishment.service.ReplenishmentCalculator",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "recalculateReplenishables",
+            "argumentTypes": [
+              "java.lang.Integer"
+            ],
+            "returnType": "void",
+            "visibility": "PUBLIC",
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": false,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }
