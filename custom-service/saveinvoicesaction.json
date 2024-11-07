@@ -1,0 +1,24 @@
+{
+    "name": "com.ravago.ohm.pl.actions.uc108.SaveInvoicesAction",
+    "enabled": true,
+    "rules": [
+      {
+        "enabled": true,
+        "fileName": "",
+        "className": "com.ravago.ohm.pl.actions.uc108.SaveInvoicesAction.java",
+        "matcher": "EQUALS",
+        "methodRules": [
+          {
+            "methodName": "saveDetail",
+            "returnType": "void",
+            "visibility": null,
+            "modifiers": []
+          }
+        ],
+        "annotations": []
+      }
+    ],
+    "queueEntryPoint": false,
+    "queueEntryPointType": null,
+    "processGroups": []
+  }

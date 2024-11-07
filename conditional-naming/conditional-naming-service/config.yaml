@@ -83,3 +83,10 @@ configs:
   config:
     name: nettycleannaming
     template: "nettycleannaming.json"
+- id: azure-next-js-application
+  type:
+    api: conditional-naming-service
+  config:
+    name: azure-next-js-application
+    template: "azure-next-js-application.json"
+

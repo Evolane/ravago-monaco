@@ -1,0 +1,83 @@
+Inventory
+DRE
+https://inventory.ravapps-dre.cluster-uat.ravago.com/
+https://inventory.ravapps.cluster-uat.ravago.com/,
+https://inventory.ravapps.cluster-prd.ravago.com/
+it-sdc-zevenofnegen
+X
+
+
+Material replenishment planning,
+https://mrp.ravapps-dre.cluster-uat.ravago.com/
+https://mrp.ravapps.cluster-uat.ravago.com/,
+https://mrp.ravapps.cluster-prd.ravago.com/
+it-sdc-zevenofnegen
+
+Logistics,
+https://logistics.ravapps-dre.cluster-uat.ravago.com/
+https://logistics.ravapps.cluster-uat.ravago.com/
+https://logistics.ravapps.cluster-prd.ravago.com/
+it-sdc-zevenofnegen
+
+Supply demand
+https://supply-chain.ravapps-dre.cluster-uat.ravago.com/
+https://supply-chain.ravapps.cluster-uat.ravago.com/
+https://supply-chain.ravapps.cluster-prd.ravago.com/,
+it-sdc-zevenofnegen
+
+ohm
+https://ohm.ravago.com 
+prod: ohm.ravago.com
+uat: reshot.ravago.com
+dre: dre.ravago.com
+
+Blue Sales
+https://blue.ravapps.cluster-uat.ravago.com/
+https://blue.ravapps.cluster-uat.ravago.com/
+https://blue.ravapps-dre.cluster-uat.ravago.com/
+it-sdc-blewery
+Dupplicate 
+Blue Direct Delivery,
+https://blue.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+
+CSR Workspace,
+https://blue-gateway-app.ravapps.cluster-prd.ravago.com/sales-order-front/
+blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-order-front/,
+blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/sales-order-front/,
+it-sdc-blewery
+
+Sales Allocation Rule,
+blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-allocation-rules-front
+blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-allocation-rules-front
+blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/sales-allocation-rules-front
+it-sdc-blewery
+
+
+
+Agreement App - CUPS (Credit Upon Proof of Sale),
+https://contract-management.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+Agreement App - Customer Rebates,
+https://contract-management.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+Agreement App - Call Offs,
+https://contract-management.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+PC Workspace,
+https://pc-workspace.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+Blue Sales Mobile,
+https://sales-mobile.ravapps.cluster-prd.ravago.com/,
+it-sdc-blewery
+
+
+Invoice Control,
+https://invoicecontrol.ravago.com/,
+it-sdc-house of finance 
+

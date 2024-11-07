@@ -257,3 +257,9 @@ configs:
   config:
     name: ra-x_ravago_correlationid
     template: x_ravago_correlationid.json
+- id: mq-correlation-id
+  type:
+    api: request-attributes
+  config:
+    name: mq-correlation-id
+    template: mq-correlation-id.json

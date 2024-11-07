@@ -92,7 +92,6 @@
             "type": "SELECTOR",
             "entitySelector": "type(CLOUD_APPLICATION_INSTANCE),fromRelationships.isInstanceOf(type(CLOUD_APPLICATION),tag({{.tagkeyvalue}}))"
         },
-        
         {
             "enabled": true,
             "type": "SELECTOR",

@@ -1,86 +1,41 @@
 configs:
-- id: ohm
+#Logistics
+- id: logistics-config
   config:
-    name: ohm
-    template: application-web.json
-    skip: false
+    name: logistics-config
+    template: logistics.json
+    skip: true
   type:
     api: application-web
-- id: ohm
-  config:
-    name: ohm
-    template: web-name.json
-    skip: false
-    parameters:
-      webname: ohm
-  type:
-    settings:
-      schema: builtin:rum.web.name
-      scope:
-        configId: ohm
-        configType: application-web
-        property: id
-        type: reference
-- id: ohm
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: LOGISTICS UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: LOGISTICS PRD
+- id: logisticsdre-config
   config:
     parameters:
-      matcher: URL_CONTAINS
-      urlpattern: ohm.ravago.com
-      appid:
-        configId: ohm
-        configType: application-web
-        property: id
-        type: reference
-    template: app-detection.json
-  type:
-    settings:
-      schema: builtin:rum.web.app-detection
-      scope: environment
-- id: ohm-2
-  config:
-    parameters:
-      matcher: URL_CONTAINS
-      urlpattern: aliasohmappprd
-      appid:
-        configId: ohm
-        configType: application-web
-        property: id
-        type: reference
-    template: app-detection.json
-  type:
-    settings:
-      schema: builtin:rum.web.app-detection
-      scope: environment
-#################################################
-- id: blue
-  config:
-    name: blue
-    template: application-web.json
-    skip: false
+      appname: LOGISTICS DRE
+    name: logisticsdre-config
+    template: logistics.json
+    skip: true
   type:
     api: application-web
-- id: blue
-  config:
-    name: blue
-    template: web-name.json
-    skip: false
-    parameters:
-      webname: blue
-  type:
-    settings:
-      schema: builtin:rum.web.name
-      scope:
-        configId: blue
-        configType: application-web
-        property: id
-        type: reference
-- id: blue
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: logistics-rule
   config:
     parameters:
       matcher: URL_CONTAINS
-      urlpattern: /sales-order-front
-      appid:
-        configId: blue
+      pattern: 
+      applicationId:
+        configId: logistics-config
         configType: application-web
         property: id
         type: reference
@@ -89,36 +44,73 @@ configs:
     settings:
       schema: builtin:rum.web.app-detection
       scope: environment
-- id: inventory
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: logistics.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: logistics.ravapps.cluster-prd.ravago.com/
+- id: logisticsdre-rule
   config:
-    name: inventory
-    template: application-web.json
-    skip: false
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: logistics.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: logisticsdre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+
+#Inventory 
+- id: inventory-config
+  config:
+    name: inventory-config
+    template: inventory.json
+    skip: true
   type:
     api: application-web
-#################################################    
-- id: inventory
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: Inventory UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: Inventory PRD
+- id: inventorydre-config
   config:
-    name: inventory
-    template: web-name.json
-    skip: false
     parameters:
-      webname: inventory
+      appname: Inventory DRE
+    name: inventorydre-config
+    template: inventory.json
+    skip: true
   type:
-    settings:
-      schema: builtin:rum.web.name
-      scope:
-        configId: inventory
-        configType: application-web
-        property: id
-        type: reference
-- id: inventory
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: inventory-rule
   config:
     parameters:
-      urlpattern: inventory.ravapps
       matcher: URL_CONTAINS
-      appid:
-        configId: inventory
+      pattern: 
+      applicationId:
+        configId: inventory-config
         configType: application-web
         property: id
         type: reference
@@ -127,3 +119,1649 @@ configs:
     settings:
       schema: builtin:rum.web.app-detection
       scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: inventory.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: inventory.ravapps.cluster-prd.ravago.com/
+- id: inventorydre-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: inventory.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: inventorydre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#MRP
+- id: MRP-config
+  config:
+    name: MRP-config
+    template: mrp.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: MRP UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: MRP PRD
+- id: MRPdre-config
+  config:
+    parameters:
+      appname: MRP DRE
+    name: MRPdre-config
+    template: MRP.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: MRP-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: MRP-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: mrp.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: mrp.ravapps.cluster-prd.ravago.com/
+- id: MRPdre-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: mrp.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: MRPdre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#SUPPLY CHAIN 
+- id: supply-chain-config
+  config:
+    name: supply-chain-config
+    template: inventory.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: SUPPLY-CHAIN UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: SUPPLY-CHAIN PRD
+- id: Supply-Chaindre-config
+  config:
+    parameters:
+      appname: SUPPLY-CHAIN DRE
+    name: Supply-Chaindre-config
+    template: inventory.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: Supply-Chain-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: supply-chain-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: supply-chain.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: supply-chain.ravapps.cluster-prd.ravago.com/
+- id: Supply-Chaindre-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: supply-chain.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: Supply-Chaindre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#OHM
+- id: OHM-config
+  config:
+    name: OHM-config
+    template: ohm.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: OHM UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: OHM PRD
+- id: OHM-DRE-config
+  config:
+    parameters:
+      appname: OHM DRE
+    name: OHM-DRE-config
+    template: ohm.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: OHM-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: OHM-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: reshot.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: ohm.ravago.com
+- id: OHM-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: dre.ravago.com
+      applicationId:
+        configId: OHM-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+#BLUE
+- id: BLUE-config
+  config:
+    name: BLUE-config
+    template: blue.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: BLUE SALES UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: BLUE SALES PRD
+- id: BLUE-DRE-config
+  config:
+    parameters:
+      appname: BLUE SALES DRE
+    name: BLUE-DRE-config
+    template: blue.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: BLUE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: BLUE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue.ravapps.cluster-uat.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue.ravapps.cluster-prd.ravago.com/
+- id: BLUE-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue.ravapps-dre.cluster-uat.ravago.com
+      applicationId:
+        configId: BLUE-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#BLUE-CSR-WORKSPACE
+- id: BLUE-CSR-WORKSPACE-config
+  config:
+    name: BLUE-CSR-WORKSPACE-config
+    template: csr.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: BLUE CSR WORKSPACE UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: BLUE CSR WORKSPACE PRD
+- id: BLUE-CSR-WORKSPACE-DRE-config
+  config:
+    parameters:
+      appname: BLUE CSR WORKSPACE DRE
+    name: BLUE-CSR-WORKSPACE-DRE-config
+    template: csr.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: BLUE-CSR-WORKSPACE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: BLUE-CSR-WORKSPACE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-order-front/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-prd.ravago.com/sales-order-front/
+- id: BLUE-CSR-WORKSPACE-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/sales-order-front/
+      applicationId:
+        configId: BLUE-CSR-WORKSPACE-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#BLUE-SALES-ALLOCATION-RULES
+- id: BLUE-SALES-ALLOCATION-RULES-config
+  config:
+    name: BLUE-SALES-ALLOCATION-RULES-config
+    template: blue-sales-allocation-rules.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: BLUE SALES ALLOCATION RULES UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: BLUE SALES ALLOCATION RULES PRD
+- id: BLUE-SALES-ALLOCATION-RULES-DRE-config
+  config:
+    parameters:
+      appname: BLUE SALES ALLOCATION RULES DRE
+    name: BLUE-SALES-ALLOCATION-RULES-DRE-config
+    template: blue-sales-allocation-rules.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: BLUE-SALES-ALLOCATION-RULES-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: BLUE-SALES-ALLOCATION-RULES-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-allocation-rules-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/sales-allocation-rules-front
+- id: BLUE-SALES-ALLOCATION-RULES-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/sales-allocation-rules-front
+      applicationId:
+        configId: BLUE-SALES-ALLOCATION-RULES-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#JOM
+- id: JOM-config
+  config:
+    name: JOM-config
+    template: JOM.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: JOM UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: JOM PRD
+- id: JOM-DRE-config
+  config:
+    parameters:
+      appname: JOM DRE
+    name: JOM-DRE-config
+    template: JOM.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: JOM-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: JOM-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/jom-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-prd.ravago.com/jom-front
+- id: JOM-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/jom-front
+      applicationId:
+        configId: JOM-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+#Agreement - CUPS
+- id: CUPS-config
+  config:
+    name: CUPS-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: Agreement CUPS UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: Agreement CUPS PRD
+- id: CUPS-DRE-config
+  config:
+    parameters:
+      appname: Agreement CUPS DRE
+    name: CUPS-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: CUPS-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: CUPS-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: contract-management.ravapps.cluster-uat.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: contract-management.ravapps.cluster-prd.ravago.com
+- id: CUPS-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: contract-management.ravapps-dre.cluster-uat.ravago.com
+      applicationId:
+        configId: CUPS-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#PC Workspace
+- id: PC-WORKSPACE-config
+  config:
+    name: PC-WORKSPACE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: PC WORKSPACE UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: PC WORKSPACE PRD
+- id: PC-WORKSPACE-DRE-config
+  config:
+    parameters:
+      appname: PC WORKSPACE DRE
+    name: PC-WORKSPACE-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: PC-WORKSPACE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: PC-WORKSPACE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: contract-management.ravapps.cluster-uat.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: contract-management.ravapps.cluster-prd.ravago.com
+- id: PC-WORKSPACE-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: contract-management.ravapps-dre.cluster-uat.ravago.com
+      applicationId:
+        configId: PC-WORKSPACE-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#BLUE SALES MOBILE
+- id: BLUE-SALES-MOBILE-config
+  config:
+    name: BLUE-SALES-MOBILE-config
+    template: blue-sales-mobile.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: BLUE SALES MOBILE UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: BLUE SALES MOBILE PRD
+- id: BLUE-SALES-MOBILE-DRE-config
+  config:
+    parameters:
+      appname: BLUE SALES MOBILE DRE
+    name: BLUE-SALES-MOBILE-DRE-config
+    template: blue-sales-mobile.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: BLUE-SALES-MOBILE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: BLUE-SALES-MOBILE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: sales-mobile.ravapps.cluster-uat.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: sales-mobile.ravapps.cluster-prd.ravago.com
+- id: BLUE-SALES-MOBILE-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: sales-mobile.ravapps-dre.cluster-uat.ravago.com
+      applicationId:
+        configId: BLUE-SALES-MOBILE-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#INVOICE CONTROL
+- id: invoice-config
+  config:
+    name: invoice-config
+    template: invoice.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: INVOICE CONTROL UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: INVOICE CONTROL PRD
+- id: invoice-DRE-config
+  config:
+    parameters:
+      appname: INVOICE CONTROL DRE
+    name: invoice-DRE-config
+    template: invoice.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: invoice-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: invoice-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern:  invoicecontrol-uat.ravago.com
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern:  invoicecontrol.ravago.com
+- id: invoice-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern:  invoicecontrol-dre.ravago.com
+      applicationId:
+        configId: invoice-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#RECIPE MANAGEMENT
+- id: recipe-config
+  config:
+    name: recipe-config
+    template: recipe.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: RECIPE MANAGEMENT UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: RECIPE MANAGEMENT PRD
+- id: recipe-DRE-config
+  config:
+    parameters:
+      appname: RECIPE MANAGEMENT DRE
+    name: recipe-DRE-config
+    template: recipe.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: recipe-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: recipe-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern:  blue-gateway-app.ravapps.cluster-uat.ravago.com/recipe-management-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern:  blue-gateway-app.ravapps.cluster-prd.ravago.com/recipe-management-front
+- id: recipe-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern:  blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/recipe-management-front
+      applicationId:
+        configId: recipe-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+#IMS
+- id: IMS-config
+  config:
+    name: IMS-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: IMS FRONT UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: IMS FRONT PRD
+- id: IMS-DRE-config
+  config:
+    parameters:
+      appname: IMS FRONT DRE
+    name: IMS-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: IMS-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: IMS-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/ims-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-prd.ravago.com/ims-front
+- id: IMS-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/ims-front
+      applicationId:
+        configId: IMS-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#IMS-OFFICE
+- id: IMS-OFFICE-config
+  config:
+    name: IMS-OFFICE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: IMS OFFICE UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: IMS OFFICE PRD
+- id: IMS-OFFICE-DRE-config
+  config:
+    parameters:
+      appname: IMS OFFICE DRE
+    name: IMS-OFFICE-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: IMS-OFFICE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      applicationId:
+        configId: IMS-OFFICE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-uat.ravago.com/ims-office-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: blue-gateway-app.ravapps.cluster-prd.ravago.com/ims-office-front
+- id: IMS-OFFICE-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: blue-gateway-app.ravapps-dre.cluster-uat.ravago.com/ims-office-front
+      applicationId:
+        configId: IMS-OFFICE-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+
+#MASTER DATA 
+- id: master-data-config
+  config:
+    name: master-data-config
+    template: master-data.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: MASTER DATA FRONT UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: MASTER DATA FRONT PRD
+- id: master-data-dre-config
+  config:
+    parameters:
+      appname: MASTER DATA FRONT DRE
+    name: master-datadre-config
+    template: master-data.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: master-data-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: master-data-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: master-data.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: master-data.ravapps.cluster-prd.ravago.com/
+- id: master-data-dre-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: master-data.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: master-data-dre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#SHOP FLOOR
+- id: shop-floor-config
+  config:
+    name: shop-floor-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: SHOP FLOOR UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: SHOP FLOOR PRD
+- id: shop-floor-dre-config
+  config:
+    parameters:
+      appname: SHOP FLOOR DRE
+    name: shop-floordre-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: shop-floor-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: shop-floor-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: shop-floor.ravapps.cluster-uat.ravago.com/
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: shop-floor.ravapps.cluster-prd.ravago.com/
+- id: shop-floor-dre-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: shop-floor.ravapps-dre.cluster-uat.ravago.com/
+      applicationId:
+        configId: shop-floor-dre-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+
+#WMS-OFFICE-FRONT-1 
+- id: WMS-OFFICE-FRONT-1-config
+  config:
+    name: WMS-OFFICE-FRONT-1-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 1 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 1 PRD
+- id: WMS-OFFICE-FRONT-1-DRE-config
+  config:
+    parameters:
+      appname: WMS OFFICE FRONT 1 DRE
+    name: WMS-OFFICE-FRONT-1-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-OFFICE-FRONT-1-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-OFFICE-FRONT-1-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0001.ravapps.cluster-uat.ravago.com/wms-office-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0001.ravapps.cluster-prd.ravago.com/wms-office-front
+- id: WMS-OFFICE-FRONT-1-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0001.ravapps-dre.cluster-uat.ravago.com/wms-office-front
+      applicationId:
+        configId: WMS-OFFICE-FRONT-1-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#WMS-MOBILE-FRONT-1 
+- id: WMS-MOBILE-FRONT-1-config
+  config:
+    name: WMS-MOBILE-FRONT-1-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 1 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 1 PRD
+- id: WMS-MOBILE-FRONT-1-DRE-config
+  config:
+    parameters:
+      appname: WMS MOBILE FRONT 1 DRE
+    name: WMS-MOBILE-FRONT-1-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-MOBILE-FRONT-1-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-MOBILE-FRONT-1-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0001.ravapps.cluster-uat.ravago.com/wms-MOBILE-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0001.ravapps.cluster-prd.ravago.com/wms-MOBILE-front
+- id: WMS-MOBILE-FRONT-1-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0001.ravapps-dre.cluster-uat.ravago.com/wms-MOBILE-front
+      applicationId:
+        configId: WMS-MOBILE-FRONT-1-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#WMS-OFFICE-FRONT-2 
+- id: WMS-OFFICE-FRONT-2-config
+  config:
+    name: WMS-OFFICE-FRONT-2-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 2 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 2 PRD
+- id: WMS-OFFICE-FRONT-2-DRE-config
+  config:
+    parameters:
+      appname: WMS OFFICE FRONT 2 DRE
+    name: WMS-OFFICE-FRONT-2-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-OFFICE-FRONT-2-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-OFFICE-FRONT-2-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0002.ravapps.cluster-uat.ravago.com/wms-office-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0002.ravapps.cluster-prd.ravago.com/wms-office-front
+- id: WMS-OFFICE-FRONT-2-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0002.ravapps-dre.cluster-uat.ravago.com/wms-office-front
+      applicationId:
+        configId: WMS-OFFICE-FRONT-2-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#WMS-MOBILE-FRONT-2 
+- id: WMS-MOBILE-FRONT-2-config
+  config:
+    name: WMS-MOBILE-FRONT-2-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 2 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 2 PRD
+- id: WMS-MOBILE-FRONT-2-DRE-config
+  config:
+    parameters:
+      appname: WMS MOBILE FRONT 2 DRE
+    name: WMS-MOBILE-FRONT-2-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-MOBILE-FRONT-2-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-MOBILE-FRONT-2-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0002.ravapps.cluster-uat.ravago.com/wms-MOBILE-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0002.ravapps.cluster-prd.ravago.com/wms-MOBILE-front
+- id: WMS-MOBILE-FRONT-2-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0002.ravapps-dre.cluster-uat.ravago.com/wms-MOBILE-front
+      applicationId:
+        configId: WMS-MOBILE-FRONT-2-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#WMS-OFFICE-FRONT-3 
+- id: WMS-OFFICE-FRONT-3-config
+  config:
+    name: WMS-OFFICE-FRONT-3-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 3 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS OFFICE FRONT 3 PRD
+- id: WMS-OFFICE-FRONT-3-DRE-config
+  config:
+    parameters:
+      appname: WMS OFFICE FRONT 3 DRE
+    name: WMS-OFFICE-FRONT-3-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-OFFICE-FRONT-3-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-OFFICE-FRONT-3-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0003.ravapps.cluster-uat.ravago.com/wms-office-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0003.ravapps.cluster-prd.ravago.com/wms-office-front
+- id: WMS-OFFICE-FRONT-3-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0003.ravapps-dre.cluster-uat.ravago.com/wms-office-front
+      applicationId:
+        configId: WMS-OFFICE-FRONT-3-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true
+
+#WMS-MOBILE-FRONT-3 
+- id: WMS-MOBILE-FRONT-3-config
+  config:
+    name: WMS-MOBILE-FRONT-3-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 3 UAT
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          appname: WMS MOBILE FRONT 3 PRD
+- id: WMS-MOBILE-FRONT-3-DRE-config
+  config:
+    parameters:
+      appname: WMS MOBILE FRONT 3 DRE
+    name: WMS-MOBILE-FRONT-3-DRE-config
+    template: application-web-template.json
+    skip: true
+  type:
+    api: application-web
+  environmentOverrides:
+    - environment: Ravago_PRD
+      override:
+        skip: true
+- id: WMS-MOBILE-FRONT-3-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: 
+      applicationId:
+        configId: WMS-MOBILE-FRONT-3-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:
+    - environment: Ravago_UAT
+      override:
+        parameters:
+          pattern: wms-0003.ravapps.cluster-uat.ravago.com/wms-MOBILE-front
+    - environment: Ravago_PRD
+      override:
+        parameters:
+          pattern: wms-0003.ravapps.cluster-prd.ravago.com/wms-MOBILE-front
+- id: WMS-MOBILE-FRONT-3-DRE-rule
+  config:
+    parameters:
+      matcher: URL_CONTAINS
+      pattern: wms-0003.ravapps-dre.cluster-uat.ravago.com/wms-MOBILE-front
+      applicationId:
+        configId: WMS-MOBILE-FRONT-3-DRE-config
+        configType: application-web
+        property: id
+        type: reference
+    template: app-detection.json
+  type:
+    settings:
+      schema: builtin:rum.web.app-detection
+      scope: environment
+  environmentOverrides:          
+    - environment: Ravago_PRD
+      override:
+        skip: true

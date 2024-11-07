@@ -2,16 +2,18 @@ manifestVersion: "1.0"
 projects:
 - name: global
   path: global
-# - name: metrics 
-#   path: metrics
-# - name: conditional-naming
-#   path: conditional-naming
-# - name: request-attributes
-#   path: request-attributes
-# - name: cloud-automation
-#   path: cloud-automation
-# - name: custom-service
-#   path: custom-service
+- name: metrics 
+  path: metrics
+- name: conditional-naming
+  path: conditional-naming
+- name: request-attributes
+  path: request-attributes
+- name: cloud-automation
+  path: cloud-automation
+- name: custom-service
+  path: custom-service
+- name: frontend
+  path: frontend
 environmentGroups:
 - name: Ravago
   environments:

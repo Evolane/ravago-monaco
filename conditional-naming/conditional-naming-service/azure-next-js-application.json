@@ -1,0 +1,21 @@
+{
+    "type": "SERVICE",
+    "nameFormat": "{Host:AzureSiteName} {Service:WebServerName}",
+    "displayName": "Azure next js application",
+    "enabled": true,
+    "rules": [
+      {
+        "key": {
+          "attribute": "SERVICE_DETECTED_NAME",
+          "type": "STATIC"
+        },
+        "comparisonInfo": {
+          "type": "STRING",
+          "operator": "EQUALS",
+          "value": "ravago",
+          "negate": false,
+          "caseSensitive": false
+        }
+      }
+    ]
+  }

@@ -1,0 +1,19 @@
+{
+    "name": "MQ correlation id",
+    "enabled": true,
+    "dataType": "STRING",
+    "dataSources": [
+      {
+        "enabled": true,
+        "source": "MQ_CORRELATION_ID",
+        "valueProcessing": {
+          "splitAt": "",
+          "trim": false
+        }
+      }
+    ],
+    "normalization": "ORIGINAL",
+    "aggregation": "ALL_DISTINCT_VALUES",
+    "confidential": false,
+    "skipPersonalDataMasking": false
+  }

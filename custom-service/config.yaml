@@ -47,3 +47,9 @@ configs:
   config:
     name: custom-service-java-mrp-calculator
     template: mrp-calculator.json
+- id: saveinvoicesaction
+  type:
+    api: custom-service-java
+  config:
+    name: saveinvoicesaction
+    template: saveinvoicesaction.json

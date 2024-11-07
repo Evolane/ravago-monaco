@@ -1,0 +1,424 @@
+{
+    "name": "{{.appname}}",
+    "type": "AUTO_INJECTED",
+    "realUserMonitoringEnabled": true,
+    "costControlUserSessionPercentage": 100,
+    "loadActionKeyPerformanceMetric": "VISUALLY_COMPLETE",
+    "sessionReplayConfig": {
+      "enabled": false,
+      "costControlPercentage": 100,
+      "enableCssResourceCapturing": true,
+      "cssResourceCapturingExclusionRules": []
+    },
+    "xhrActionKeyPerformanceMetric": "VISUALLY_COMPLETE",
+    "loadActionApdexSettings": {
+      "toleratedThreshold": 3000,
+      "frustratingThreshold": 12000,
+      "toleratedFallbackThreshold": 3000,
+      "frustratingFallbackThreshold": 12000
+    },
+    "xhrActionApdexSettings": {
+      "toleratedThreshold": 3000,
+      "frustratingThreshold": 12000,
+      "toleratedFallbackThreshold": 3000,
+      "frustratingFallbackThreshold": 12000
+    },
+    "customActionApdexSettings": {
+      "toleratedThreshold": 3000,
+      "frustratingThreshold": 12000,
+      "toleratedFallbackThreshold": 3000,
+      "frustratingFallbackThreshold": 12000
+    },
+    "waterfallSettings": {
+      "uncompressedResourcesThreshold": 860,
+      "resourcesThreshold": 100000,
+      "resourceBrowserCachingThreshold": 50,
+      "slowFirstPartyResourcesThreshold": 200000,
+      "slowThirdPartyResourcesThreshold": 200000,
+      "slowCdnResourcesThreshold": 200000,
+      "speedIndexVisuallyCompleteRatioThreshold": 50
+    },
+    "monitoringSettings": {
+      "fetchRequests": true,
+      "xmlHttpRequest": true,
+      "javaScriptFrameworkSupport": {
+        "angular": true,
+        "dojo": false,
+        "extJS": false,
+        "icefaces": false,
+        "jQuery": false,
+        "mooTools": false,
+        "prototype": false,
+        "activeXObject": false
+      },
+      "contentCapture": {
+        "resourceTimingSettings": {
+          "w3cResourceTimings": true,
+          "nonW3cResourceTimings": false,
+          "nonW3cResourceTimingsInstrumentationDelay": 50,
+          "resourceTimingCaptureType": null,
+          "resourceTimingsDomainLimit": null
+        },
+        "javaScriptErrors": true,
+        "timeoutSettings": {
+          "timedActionSupport": false,
+          "temporaryActionLimit": 0,
+          "temporaryActionTotalTimeout": 100
+        },
+        "visuallyCompleteAndSpeedIndex": true,
+        "visuallyComplete2Settings": {
+          "excludeUrlRegex": null,
+          "ignoredMutationsList": null,
+          "mutationTimeout": 50,
+          "inactivityTimeout": 1000,
+          "threshold": 50
+        }
+      },
+      "excludeXhrRegex": "",
+      "correlationHeaderInclusionRegex": "",
+      "injectionMode": "JAVASCRIPT_TAG",
+      "addCrossOriginAnonymousAttribute": true,
+      "scriptTagCacheDurationInHours": 1,
+      "libraryFileLocation": "/sales-order-front/dynatrace/",
+      "monitoringDataPath": "/sales-order-front/dynatrace/beacon",
+      "customConfigurationProperties": "",
+      "serverRequestPathId": "",
+      "secureCookieAttribute": false,
+      "cookiePlacementDomain": null,
+      "sameSiteCookieAttribute": null,
+      "cacheControlHeaderOptimizations": true,
+      "advancedJavaScriptTagSettings": {
+        "syncBeaconFirefox": false,
+        "syncBeaconInternetExplorer": false,
+        "instrumentUnsupportedAjaxFrameworks": false,
+        "specialCharactersToEscape": "",
+        "maxActionNameLength": 100,
+        "maxErrorsToCapture": 10,
+        "additionalEventHandlers": {
+          "userMouseupEventForClicks": false,
+          "clickEventHandler": false,
+          "mouseupEventHandler": false,
+          "blurEventHandler": false,
+          "changeEventHandler": false,
+          "toStringMethod": false,
+          "maxDomNodesToInstrument": 5000
+        },
+        "eventWrapperSettings": {
+          "click": false,
+          "mouseUp": false,
+          "change": false,
+          "blur": false,
+          "touchStart": false,
+          "touchEnd": false
+        },
+        "globalEventCaptureSettings": {
+          "mouseUp": true,
+          "mouseDown": true,
+          "click": true,
+          "doubleClick": true,
+          "keyUp": true,
+          "keyDown": true,
+          "scroll": true,
+          "additionalEventCapturedAsUserInput": "",
+          "touchStart": true,
+          "touchEnd": true,
+          "change": true
+        },
+        "userActionNameAttribute": null,
+        "proxyWrapperEnabled": false
+      },
+      "browserRestrictionSettings": {
+        "mode": "EXCLUDE",
+        "browserRestrictions": []
+      },
+      "ipAddressRestrictionSettings": {
+        "mode": "EXCLUDE",
+        "ipAddressRestrictions": []
+      },
+      "javaScriptInjectionRules": [],
+      "instrumentedWebServer": null,
+      "useCors": false
+    },
+    "userTags": [
+      {
+        "uniqueId": 1,
+        "metadataId": 1,
+        "ignoreCase": false
+      }
+    ],
+    "userActionAndSessionProperties": [
+      {
+        "displayName": "Ravago LE",
+        "type": "STRING",
+        "origin": "META_DATA",
+        "aggregation": "LAST",
+        "storeAsUserActionProperty": true,
+        "storeAsSessionProperty": false,
+        "cleanupRule": "(.[^•]++)",
+        "uniqueId": 3,
+        "key": "ravago_le",
+        "metadataId": 3,
+        "ignoreCase": false
+      },
+      {
+        "displayName": "Customer name",
+        "type": "STRING",
+        "origin": "META_DATA",
+        "aggregation": "LAST",
+        "storeAsUserActionProperty": true,
+        "storeAsSessionProperty": false,
+        "uniqueId": 4,
+        "key": "ravago_customer_name",
+        "metadataId": 4,
+        "ignoreCase": false
+      },
+      {
+        "displayName": "Order ID",
+        "type": "STRING",
+        "origin": "META_DATA",
+        "aggregation": "LAST",
+        "storeAsUserActionProperty": true,
+        "storeAsSessionProperty": false,
+        "uniqueId": 5,
+        "key": "ravago_order_id",
+        "metadataId": 5,
+        "ignoreCase": false
+      },
+      {
+        "displayName": "Order Line Number",
+        "type": "STRING",
+        "origin": "META_DATA",
+        "aggregation": "LAST",
+        "storeAsUserActionProperty": true,
+        "storeAsSessionProperty": false,
+        "cleanupRule": "Consult Product #(\\d++)",
+        "uniqueId": 6,
+        "key": "ravago_order_line_number",
+        "metadataId": 6,
+        "ignoreCase": false
+      },
+      {
+        "displayName": "Product Name",
+        "type": "STRING",
+        "origin": "META_DATA",
+        "aggregation": "LAST",
+        "storeAsUserActionProperty": true,
+        "storeAsSessionProperty": false,
+        "uniqueId": 7,
+        "key": "ravago_product_name",
+        "metadataId": 7,
+        "ignoreCase": false
+      }
+    ],
+    "userActionNamingSettings": {
+      "placeholders": [
+        {
+          "name": "ravagoPageInfo",
+          "input": "PAGE_URL",
+          "processingPart": "ALL",
+          "processingSteps": [
+            {
+              "type": "REPLACE_WITH_PATTERN",
+              "patternBefore": null,
+              "patternBeforeSearchType": "FIRST",
+              "patternAfter": null,
+              "patternAfterSearchType": "FIRST",
+              "replacement": "",
+              "patternToReplace": "https://blue.ravapps.cluster-prd.ravago.com/#/",
+              "regularExpression": null,
+              "fallbackToInput": false
+            },
+            {
+              "type": "REPLACE_WITH_REGULAR_EXPRESSION",
+              "patternBefore": null,
+              "patternBeforeSearchType": "FIRST",
+              "patternAfter": null,
+              "patternAfterSearchType": "LAST",
+              "replacement": " ",
+              "patternToReplace": null,
+              "regularExpression": "\\W|\\d++",
+              "fallbackToInput": false
+            },
+            {
+              "type": "REPLACE_WITH_PATTERN",
+              "patternBefore": null,
+              "patternBeforeSearchType": "FIRST",
+              "patternAfter": null,
+              "patternAfterSearchType": "LAST",
+              "replacement": "",
+              "patternToReplace": "https   blue ravapps cluster prd ravago com",
+              "regularExpression": null,
+              "fallbackToInput": false
+            }
+          ],
+          "metadataId": null,
+          "useGuessedElementIdentifier": false
+        },
+        {
+          "name": "ravagoElementIdentifier",
+          "input": "ELEMENT_IDENTIFIER",
+          "processingPart": "ALL",
+          "processingSteps": [
+            {
+              "type": "EXTRACT_BY_REGULAR_EXPRESSION",
+              "patternBefore": null,
+              "patternBeforeSearchType": "FIRST",
+              "patternAfter": null,
+              "patternAfterSearchType": "LAST",
+              "replacement": null,
+              "patternToReplace": null,
+              "regularExpression": "(check|file|info|clear)",
+              "fallbackToInput": false
+            }
+          ],
+          "metadataId": null,
+          "useGuessedElementIdentifier": false
+        },
+        {
+          "name": "AggrregateIDS",
+          "input": "PAGE_URL",
+          "processingPart": "ALL",
+          "processingSteps": [
+            {
+              "type": "REPLACE_IDS",
+              "patternBefore": null,
+              "patternBeforeSearchType": "FIRST",
+              "patternAfter": null,
+              "patternAfterSearchType": "LAST",
+              "replacement": "[ID]",
+              "patternToReplace": null,
+              "regularExpression": null,
+              "fallbackToInput": false
+            }
+          ],
+          "metadataId": null,
+          "useGuessedElementIdentifier": false
+        }
+      ],
+      "loadActionNamingRules": [
+        {
+          "template": "{userInteraction (default)} on {elementIdentifier (default)} - {pageTitle (default)}",
+          "conditions": [
+            {
+              "operand1": "{elementIdentifier (default)}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            },
+            {
+              "operand1": "{userInteraction (default)}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            }
+          ],
+          "useOrConditions": false
+        },
+        {
+          "template": "loading of page {AggrregateIDS}",
+          "conditions": [],
+          "useOrConditions": false
+        }
+      ],
+      "xhrActionNamingRules": [
+        {
+          "template": "{ravagoPageInfo}: {userInteraction (default)} on {ravagoElementIdentifier}",
+          "conditions": [
+            {
+              "operand1": "{ravagoElementIdentifier}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            }
+          ],
+          "useOrConditions": false
+        },
+        {
+          "template": "{ravagoPageInfo}: {userInteraction (default)} on {elementIdentifier (default)}",
+          "conditions": [
+            {
+              "operand1": "{ravagoPageInfo}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            }
+          ],
+          "useOrConditions": false
+        },
+        {
+          "template": "{userInteraction (default)} on {elementIdentifier (default)}",
+          "conditions": [
+            {
+              "operand1": "{userInteraction (default)}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            },
+            {
+              "operand1": "{elementIdentifier (default)}",
+              "operand2": null,
+              "operator": "IS_NOT_EMPTY"
+            }
+          ],
+          "useOrConditions": false
+        }
+      ],
+      "customActionNamingRules": [],
+      "ignoreCase": true,
+      "useFirstDetectedLoadAction": true,
+      "splitUserActionsByDomain": true,
+      "queryParameterCleanups": [
+        "cfid",
+        "phpsessid",
+        "__sid",
+        "cftoken",
+        "sid"
+      ]
+    },
+    "metaDataCaptureSettings": [
+      {
+        "type": "COOKIE",
+        "capturingName": "RavagoDynatrace",
+        "name": "VisitTag1",
+        "uniqueId": 1,
+        "publicMetadata": false,
+        "useLastValue": false
+      },
+      {
+        "type": "CSS_SELECTOR",
+        "capturingName": "#text_ravago_entity > strong,#input_select_ravago_entity > div.selectize-input > div > span:nth-child(2) > span,body > div > div > application-sidebar > div > div > div > div > div.item.ng-scope.active > div > span.subtitle.ng-binding",
+        "name": "Ravago LE",
+        "uniqueId": 3,
+        "publicMetadata": true,
+        "useLastValue": false
+      },
+      {
+        "type": "CSS_SELECTOR",
+        "capturingName": "#consult_text_customer > p",
+        "name": "Customer name",
+        "uniqueId": 4,
+        "publicMetadata": true,
+        "useLastValue": false
+      },
+      {
+        "type": "CSS_SELECTOR",
+        "capturingName": "#order_header > div.block.order-meta > p.order-id.ng-scope > a > span",
+        "name": "Order ID",
+        "uniqueId": 5,
+        "publicMetadata": true,
+        "useLastValue": false
+      },
+      {
+        "type": "CSS_SELECTOR",
+        "capturingName": "#consult_order_line_batches > div.view-header > div > div > actions-toolbar > div > h2",
+        "name": "Order Line Number",
+        "uniqueId": 6,
+        "publicMetadata": true,
+        "useLastValue": false
+      },
+      {
+        "type": "CSS_SELECTOR",
+        "capturingName": "#panel_consult_product_info > div > div.content > div > div:nth-child(2) > div:nth-child(1) > div > div > div.key-value-set > div:nth-child(1) > div.value.col-m-8.ng-binding",
+        "name": "Product Name",
+        "uniqueId": 7,
+        "publicMetadata": true,
+        "useLastValue": false
+      }
+    ],
+    "conversionGoals": []
+  }

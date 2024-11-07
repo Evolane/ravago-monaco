@@ -1,0 +1,12 @@
+configs:
+  - id: ap_team_blewery
+    type:
+      settings:
+        schema: builtin:alerting.profile
+        scope: environment
+    config:
+      name: ap_team_blewery
+      template: ap-based-on-mgzone.json
+      parameters:
+        ap_name: "Team:Blewery"
+        mgzoneid: ["global", "builtin:management-zones", "Team:Blewery", "id"]
